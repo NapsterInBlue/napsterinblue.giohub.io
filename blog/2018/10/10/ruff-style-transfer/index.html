@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Nick">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>Ruff Style Transfer | Movies, Metrics, Musings</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" title="Movies, Metrics, Musings blog atom feed" href="/feeds/all.atom.xml" />
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/theme/css/icons.css"/>
+        <style>.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+        <style>body {
+  margin: 0;
+  padding: 0;
+  font: 15px 'Source Sans Pro', sans-serif;
+  line-height: 1.6em;
+  color: #222;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #007EE5;
+  text-decoration: none;
+}
+a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+header.main-header {
+  background: none repeat scroll 0% 0% #205F29;
+  margin-bottom: 0px;
+}
+header.main-header a {
+  color: #fff;
+}
+header.main-header .container {
+  max-width: 1000px;
+}
+header.main-header .container nav a:hover {
+  background-color: #5C881C;
+}
+article {
+  margin: 0;
+}
+article header.about {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+article header {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+article header h1 {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: #000;
+}
+article header time {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: right;
+}
+article header time.left {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: left;
+}
+article div.social-links ul {
+  padding: 0px;
+}
+article div.social-links li {
+  display: inline;
+  font-size: 20px;
+}
+article div.social-links li a {
+  color: #000;
+  padding: 10px;
+}
+article div.social-links li a:hover {
+  color: #666;
+  text-decoration: none;
+}
+article p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+article p.note {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 0.533em 0.733em;
+}
+article p.update {
+  background-color: #FEEFB3;
+  border: 1px solid #e6e68a;
+  padding: 0.533em 0.733em;
+}
+article p.alert {
+  background-color: #ffe2e2;
+  border: 1px solid #ffb2b2;
+  padding: 0.533em 0.733em;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article li {
+  font-size: 16px;
+  line-height: 1.6em;
+}
+article a:hover {
+  text-decoration: underline;
+}
+article blockquote {
+  border-left: 2px solid #c7c7cc;
+  color: #666;
+  margin: 30px 0;
+  padding: 0 0 0 25px;
+}
+article img {
+  max-width: 100%;
+}
+article code {
+  color: #333;
+  background-color: #EEE;
+  border-radius: 0;
+  font-size: 13px;
+}
+article .meta {
+  font-size: 11px;
+}
+article .meta a:hover {
+  text-decoration: none;
+}
+article .meta div {
+  margin-bottom: 20px;
+  display: block;
+}
+article .meta a.tag {
+  margin: 0 10px 10px 0;
+  padding: 1px 12px;
+  display: inline-block;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.05);
+}
+article .meta a.tag:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+article .meta a.read_more,
+article .meta a.comments_btn {
+  font-size: 14px;
+  font-weight: 800;
+  padding: 10px 20px;
+  color: #205F29;
+  background: #FFF;
+  border: 1px solid #205F29;
+}
+article .meta a.read_more:hover,
+article .meta a.comments_btn:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.index {
+  max-width: 700px;
+}
+.index article header h2 {
+  font-size: 36px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+.index article header h2 a {
+  color: #000;
+}
+.index article header h2 a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+.index .separator {
+  padding: 40px 0 0 0;
+  margin: 0 0 40px 0;
+  height: 10px;
+  border-bottom: solid 1px #CCC;
+}
+.index .pagination {
+  display: block;
+  margin-bottom: 100px;
+}
+.index .pagination .left {
+  text-align: right;
+}
+.index .pagination .right {
+  text-align: left;
+}
+.index .pagination a {
+  display: inline-block;
+  border: 2px solid #5C881C;
+  margin: 0 5px;
+  padding: 8px 20px;
+  font-weight: bold;
+  color: #5C881C;
+}
+.index .pagination a:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.post {
+  max-width: 800px;
+}
+.post h2:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h3:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h4:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post article .meta {
+  margin: 50px 0 100px;
+}
+.list {
+  max-width: 700px;
+}
+.list ul.double-list {
+  margin: 0 auto 60px;
+  padding: 0;
+  list-style-type: none;
+}
+.list ul.double-list li {
+  padding: 5px 0;
+}
+.list ul.double-list li h2 {
+  font-size: 1em;
+  display: inline;
+  font-weight: normal;
+}
+.list ul.double-list li span {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  float: right;
+  padding-top: 3px;
+  font-size: 12px;
+  color: #999;
+}
+.full-width-content {
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  padding-right: 0px;
+  padding-left: 0px;
+}</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    </head>
+
+    <body>
+        <header class="navbar navbar-inverse bs-docs-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#theNavbar">
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		  </button>
+                  <a class="navbar-brand" href="/" title="Home" class="title">Movies, Metrics, Musings</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation" id="theNavbar">
+		    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/pages/about.html" title="About">About</a></li>
+                            <li><a href="/archives.html" title="Archive">Archive</a></li>
+                            <li><a href="/pages/resources.html" title="Resources">Resources</a></li>
+                            <li><a href="/notes" title="Notes">My Notes</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="wrap">
+<div class="container post">
+    <article>
+        <header>
+            <h1>Ruff Style Transfer</h1>
+            <time datetime="article.date.isoformat()" pubdate>Wed 10 October 2018</time>
+        </header>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Table of Contents</div>
+            <div class="panel-body">
+            <div id="toc"><ul><li><a class="toc-href" href="#overview" title="Overview ">Overview </a></li><li><a class="toc-href" href="#a-dog-day-afternoon" title="A Dog Day Afternoon ">A Dog Day Afternoon </a><ul><li><a class="toc-href" href="#anyways-look-at-my-dog" title="Anyways, Look at My Dog ">Anyways, Look at My Dog </a></li><li><a class="toc-href" href="#a-more-earnest-attempt" title="A More Earnest Attempt ">A More Earnest Attempt </a></li></ul></li><li><a class="toc-href" href="#unleash-the_pack_1" title="Unleash THE_PACK ">Unleash THE_PACK </a><ul><li><a class="toc-href" href="#rules-of-the-road" title="Rules of the Road ">Rules of the Road </a></li><li><a class="toc-href" href="#an-unholy-marriage" title="An Unholy Marriage ">An Unholy Marriage </a></li></ul></li><li><a class="toc-href" href="#bonus-simpsons-couch-gags_1" title="Bonus: Simpsons Couch Gags ">Bonus: Simpsons Couch Gags </a><ul><li><a class="toc-href" href="#doing-it" title="Doing It ">Doing It </a></li><li><a class="toc-href" href="#the-good" title="The Good ">The Good </a></li><li><a class="toc-href" href="#the-bad" title="The Bad ">The Bad </a></li><li><a class="toc-href" href="#the-hell-is-that" title="...the Hell is That?? ">...the Hell is That?? </a></li></ul></li></ul></div>
+            </div>
+        </div>
+
+        <div class="article_content">
+            
+<p>The last couple months have been blog-dark as I worked through the <a href="https://www.deeplearning.ai/courses/">Deep Learning Specialization</a> on Coursera. After the first couple courses of fundamentals, we brought some practitioners on site at work to give us a two-day-long bootcamp on a whole range of topics. I've since worked my way through the next couple of courses regarding project structures and computer-vision applications; I also got my computer doing all of my model-training on my GPU (which equals <em>dramatically-faster</em> code!).</p>
+<p>Getting handy with Deep Learning techniques has been a goal of mine for some time now and so I'm excited to be able to start sharing some of the stuff I'm figuring out.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link"> </a></h2>
+<p><center><img src="http://napsterinblue.github.io/images/deep_nets.png"/></center></p>
+<p>This is an alarmingly-reductive representation of what's happening under the hood, but if you're not familiar with Neural Networks/Deep Learning, the idea is that you feed some data in on the left, it comes out on the right with some sort of prediction. Along the way, Data Science&trade; happens as a result of our model iteratively figuring out the equations to affix to the black lines and blue circles. Provided that we give the program enough data and let it run for a long time, it can "learn" some really complex behavior.</p>
+<p>An interesting application of these techniques is called <em>Neural Style Transfer</em> where basically, we crack open one of these structures, show it two pictures, and let it figure out how to splice the two of them together by borrowing the <strong>Content</strong> from one and <strong>Style</strong> from the other. Some of the more famous examples look like the following:</p>
+<p><center><img src="http://napsterinblue.github.io/images/style_transfer.png"/></center>
+<center>Screenshot taken from Course 4 Week 4 of the Specialization linked above</center></p>
+<p>But this isn't intended to be a tutorial post (that's been expertly done <a href="https://medium.com/artists-and-machine-intelligence/neural-artistic-style-transfer-a-comprehensive-look-f54d8649c199">here</a> and <a href="https://medium.com/tensorflow/neural-style-transfer-creating-art-with-deep-learning-using-tf-keras-and-eager-execution-7d541ac31398">here</a>). Instead let's look at some of the more ridiculous applications I've stumbled into!</p>
+
+<h2 id="a-dog-day-afternoon">A Dog Day Afternoon<a class="headerlink" href="#a-dog-day-afternoon" title="Permanent link"> </a></h2>
+<p>Instead of visiting with friends and playing in the Alumni Marching Band at Michgan last weekend, I spent my Saturday at home sick as hell and tinkering with the <a href="https://keras.io/">keras deep learning framework.</a> It took awhile to get everything up and running, but once I was set up, I was able to enjoy a "fire-and-forget" model training workflow where I could provide a couple images, then let the program do its thing while I went and napped.</p>
+<p>And hey, check it out, it works!</p>
+<p>I took a picture of the castle my best friend got married in and weighed that against <a href="https://www.reddit.com/r/ImaginaryLandscapes/comments/8rf9n2/eclipse/">a really cool painting I found on /r/imaginarylandscapes</a></p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/combinations/castle_space.png"/></center></p>
+<p><br/>
+And while the result didn't really mesh whatsoever...</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/castle/space_castle_at_iteration_45.png"/></center>
+<br/></p>
+<p>... it was obvious that it was figuring out some sort of way to combine the pink, streaky elements of the second picture, while still preserving the content of the first.</p>
+<p>So now that I was capable of using this technique, the question became</p>
+<blockquote>
+<p>"What's the single-most <strong>impactful</strong> use of this new skill in my toolkit that I can employ <em>today</em>?"</p>
+</blockquote>
+<p><br/>
+<br/>
+<br/></p>
+<h3 id="anyways-look-at-my-dog">Anyways, Look at My Dog<a class="headerlink" href="#anyways-look-at-my-dog" title="Permanent link"> </a></h3>
+<p><br/>
+This is Daisy. She's a goof.</p>
+<p><br/>
+<center><span class="videobox">
+<iframe allowfullscreen="" frameborder="0" height="390" mozallowfullscreen="" src="https://www.youtube.com/embed/YeGAwpZFetY" webkitallowfullscreen="" width="640">
+</iframe>
+</span></center>
+<br/></p>
+<p>I initally set out to see if I could use Style Transfer to punch up a picture this old girl.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/images/loaf_daisy.jpg"/></center>
+<br/></p>
+<p>I tried for bombastic.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/combinations/bombastic.png"/></center>
+<br/></p>
+<p>Then stately.
+<br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/combinations/stately.png"/></center>
+<br/></p>
+<p>Finally, I let the algorithm get carried away Miazaki-fying her.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/combinations/totoro.png"/></center>
+<br/>
+<br/></p>
+<h3 id="a-more-earnest-attempt">A More Earnest Attempt<a class="headerlink" href="#a-more-earnest-attempt" title="Permanent link"> </a></h3>
+<p>Perhaps it had less to do with style transfer, and more to do with starting with a flattering picture.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/images/jedi_daisy.jpg"/></center>
+<center>Like this one.</center>
+<br/></p>
+<p>Then apply Style Transfer, we do.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/combinations/yoda.png"/></center>
+<br/></p>
+<p>Or this one.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/images/happy_daisy.jpg"/></center>
+<br/></p>
+<p>What if we decide that she should look more like a snow leopard?</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/combinations/leopard.png"/></center>
+<br/></p>
+<p>And so this was certainly amusing for awhile.</p>
+<p>But what if it was weirder?</p>
+<h2 id="unleash-the_pack_1">Unleash THE_PACK<a class="headerlink" href="#unleash-the_pack" title="Permanent link"> </a></h2>
+<p>Before we launch into this next section, I feel it bears a quick bit of explanation for friends out there that spend less time indoors than I do.</p>
+<h3 id="rules-of-the-road">Rules of the Road<a class="headerlink" href="#rules-of-the-road" title="Permanent link"> </a></h3>
+<p><a href="https://www.reddit.com/r/THE_PACK/">/r/THE_PACK</a> (NSFW) is a funny corner of Reddit where nearly 100k subscribers are all rallied around the same, ironic in-joke.</p>
+<p>At its core, the entire sub is sarcastically derivative of the kind of machismo, curse-word laden, skeleton-bearing images like you might see on shirts like this</p>
+<p><center><img src="http://napsterinblue.github.io/images/style_transfer/images/origin.png"/></center></p>
+<p>But often lousy with Early 2000s-era Microsoft Office WordArt...</p>
+<p><center><img src="http://napsterinblue.github.io/images/style_transfer/images/cats_dogs.jpg"/></center></p>
+<p>...about hysterically-specific things...</p>
+<p><center><img src="http://napsterinblue.github.io/images/style_transfer/images/almond_milk.png"/></center></p>
+<p>...written from the persona of an edgy middle-schooler who's <em>just</em> getting the hang of computers and swear words...</p>
+<p><center><img src="http://napsterinblue.github.io/images/style_transfer/images/ipad.png"/></center></p>
+<p>...and living out power fantasies, sharing the thoughts that they can't in real life.</p>
+<p><center><img src="http://napsterinblue.github.io/images/style_transfer/images/gordon.png"/></center></p>
+<p>They're occasionally pretty wholesome...</p>
+<p><center><img src="http://napsterinblue.github.io/images/style_transfer/images/step_son.png"/></center></p>
+<p>...and almost always steeped in irony.</p>
+<p><center><img src="http://napsterinblue.github.io/images/style_transfer/images/irony.png"/></center></p>
+<p><br/></p>
+<p>But that's the long-and-short of it. It's genuinely one of my favorite subreddits. If this isn't the funniest thing you've seen all day, I don't know what to tell you.</p>
+<p><center><img src="http://napsterinblue.github.io/images/style_transfer/images/shoes.png"/></center>
+<br/></p>
+<h3 id="an-unholy-marriage">An Unholy Marriage<a class="headerlink" href="#an-unholy-marriage" title="Permanent link"> </a></h3>
+<p>So naturally, I was going to Style Transfer THE_PACK. I took to <a href="https://www.reddit.com/r/aww">/r/aww</a> to find some prime, dog-shaped candidates.</p>
+<p>First off, I spied this good boy on a shopping trip and elected to pair him against a needlessly-anthropomorphic dragon with a dash of spelling error.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/combinations/pack_1.png"/></center>
+<br/></p>
+<p>I think my favorite thing about how this turned out is that the font on the cart handle adopted the gross, block lettering from its counterpart.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/the_pack/pack2_booksmart_at_iteration_100.png"/></center>
+<br/></p>
+<p>I was much more excited to run this next one if for the diversity in color/letter style alone.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/combinations/pack_2.png"/></center>
+<br/></p>
+<p>And boy did it deliver, lol</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/the_pack/pack3_sunchips_at_iteration_100.png"/></center>
+<br/></p>
+<p>Finally, I paired this cute pup in surgery recovery with, perhaps, my favorite post on the whole subreddit.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/combinations/pack_3.png"/></center>
+<br/>
+<br/>
+I set it up to run 1000 iterations and then went to bed.
+<br/>
+<br/>
+And woke up to a beautiful disaster.
+<br/>
+<br/>
+<br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/the_pack/pack1_trevor_at_iteration_500.png"/></center>
+<center>True riders of THE_PACK will be as excited as I was to see "Rocco" turn into a ROOOO </center>
+<br/></p>
+<p>And that was the brunt of what I intended to share.</p>
+<h2 id="bonus-simpsons-couch-gags_1">Bonus: Simpsons Couch Gags<a class="headerlink" href="#bonus-simpsons-couch-gags" title="Permanent link"> </a></h2>
+<p>But then I was outlining the premise of this post to someone earlier and after the initial wave of confusion, they offered that it might be interesting to try and generate some variations on the classic couch gag.</p>
+<p><center><span class="videobox">
+<iframe allowfullscreen="" frameborder="0" height="390" mozallowfullscreen="" src="https://www.youtube.com/embed/T5vuzfdmsDo" webkitallowfullscreen="" width="640">
+</iframe>
+</span></center>
+<center>This one stands out as one of my more memorable favorites.</center></p>
+<p>Why, yes it would.</p>
+<p><br/></p>
+<h3 id="doing-it">Doing It<a class="headerlink" href="#doing-it" title="Permanent link"> </a></h3>
+<p>So we start with a base image</p>
+<p><center><img src="http://napsterinblue.github.io/images/style_transfer/images/simpsons.png"/></center></p>
+<p>And we spend our Work From Home Day doing actual work on the laptop, while periodically firing off</p>
+<p><code>python transfer.py images/simpsons.png images/some_garbage.png --iter=100</code></p>
+<p>and returning to results of... mixed quality.</p>
+<h3 id="the-good">The Good<a class="headerlink" href="#the-good" title="Permanent link"> </a></h3>
+<p>I started off with <a href="https://www.reddit.com/r/pics/comments/9lssan/banksys_girl_with_balloon_shreds_itself_after/?st=jn50kdei&amp;sh=9c88f906">that Banksy piece that's been in the news this week</a> and it turned out pretty great.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/images/banksy.jpg"/></center>
+<br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/simpsons/banksy_at_iteration_50.png"/></center>
+<br/></p>
+<p>I'd seen other projects have a lot of success transferring psychedelic-style art, so it came as little surprise when it worked well here.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/images/psychadelic.jpg"/></center>
+<br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/simpsons/psychadelic_at_iteration_50.png"/></center>
+<br/></p>
+<p>So did a still from the Take On Me music video.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/images/takeonme.jpg"/></center>
+<br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/simpsons/takeonme_at_iteration_50.png"/></center>
+<br/></p>
+<p>And the design document for my tattoo, courtesy of <a href="https://www.instagram.com/johnnyandres/">Johnny Andres</a></p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/images/tattoo.jpg"/></center>
+<br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/simpsons/tattoo_at_iteration_50.png"/></center>
+<br/></p>
+<p>But I think the house from <em>Up</em> wound up being my favorite result.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/images/up.jpg"/></center>
+<br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/simpsons/up_at_iteration_50.png"/></center>
+<br/></p>
+<h3 id="the-bad">The Bad<a class="headerlink" href="#the-bad" title="Permanent link"> </a></h3>
+<p>I think the <strong>DEEAAAAAAAD</strong> looked similar-enough to Marge's necklace next to the top of Lisa and Maggies' hair that it caused their faces to bleed together.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/images/batman.jpg"/></center>
+<br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/simpsons/batman_at_iteration_50.png"/></center>
+<br/></p>
+<p>Dali blurred everything. Go figure.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/images/dali.jpg"/></center>
+<br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/simpsons/dali_at_iteration_50.png"/></center>
+<br/></p>
+<p>Apparently South Park is a show about everything melting.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/images/south_park.jpg"/></center>
+<br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/simpsons/south_park_at_iteration_50.png"/></center>
+<br/></p>
+<p>And the essence of Spongebob Squarepants is a downright-Lovecraftian number of eyeballs.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/images/spongebob.jpg"/></center>
+<br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/simpsons/spongebob_at_iteration_50.png"/></center>
+<br/></p>
+<h3 id="the-hell-is-that">...the Hell is That??<a class="headerlink" href="#the-hell-is-that" title="Permanent link"> </a></h3>
+<p>Finally, I fed it this picture of Steve Buscemi for about an hour, because why not?</p>
+<p><center><img src="http://napsterinblue.github.io/images/style_transfer/images/buscemi.jpg"/></center>
+<br/>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/simpsons/buscemi_at_iteration_300.png"/></center>
+<br/></p>
+<p>And if you stare at this like a <a href="http://www.magiceye.com/faq_example.htm">Magic Eye puzzle</a>, legend has it that he actually enters your soul.</p>
+<hr/>
+<p>This was as fun to write as it was weird to read. If you've got the hardware that can swing it, putting two images together is basically a one-liner from the command line. <a href="https://github.com/NapsterInBlue/style_transfer">Source code is here</a>-- <a href="https://twitter.com/NapsterInBlue">hit me up on Twitter</a> if you come up with anything particularly bad!</p>
+<p>Cheers,</p>
+<p>-Nick</p>
+        </div>
+
+        <div class="meta">
+            <div>
+                    <a href="http://napsterinblue.github.io/tag/viz.html" class="tag">viz</a>
+                    <a href="http://napsterinblue.github.io/tag/light.html" class="tag">light</a>
+                    <a href="http://napsterinblue.github.io/tag/data-science.html" class="tag">data science</a>
+                    <a href="http://napsterinblue.github.io/tag/deep-learning.html" class="tag">deep learning</a>
+            </div>
+        </div>
+    </article>
+
+
+</div>
+
+<style type="text/css">
+{
+    max-width: 700px;
+}
+
+.text_cell .prompt {
+    display: none;
+}
+
+div.cell {
+    padding: 0;
+}
+
+div.text_cell_render {
+    padding: 0;
+}
+
+div.prompt {
+    padding: -2px;
+    font-size: 13px;
+    min-width: 9ex;
+}
+
+div.input_prompt {
+    padding: .4em 0.2em;
+}
+
+div.output_prompt {
+    padding: .1em .2em;
+}
+
+div.output_area{
+    padding-bottom: 10px;
+}
+
+div.output_subarea {
+    max-width: calc(100% - 10ex);
+}
+
+div.input_area {
+    margin: .2em 0.4em;
+    max-width: 650px;
+}
+
+table.dataframe {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+table.dataframe th, td {
+    padding: 4px;
+    text-align: left;
+}
+
+pre code {
+    background-color: inherit;
+}
+
+.highlight {
+    padding-left: 4ex;
+    background: #fff;
+}
+
+code, kbd, pre, samp {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.dataframe thead tr:only-child th {
+    text-align: left;
+    background-color: #dae7f3;
+}</style>
+
+        </div>
+<!--
+    <footer>
+      <p>
+        © 2012-2017 Nick, license <a href=""> </a>
+        unless otherwise noted.
+        Generated by <a href= "http://docs.getpelican.com/">Pelican</a>.
+      </p>
+    </footer>
+-->
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-117840969-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-117840969-1');
+    ga('send', 'pageview');
+</script>
+    </body>
+</html>
