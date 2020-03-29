@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Nick">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>To Iowa | Movies, Metrics, Musings</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" title="Movies, Metrics, Musings blog atom feed" href="/feeds/all.atom.xml" />
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/theme/css/icons.css"/>
+        <style>.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+        <style>body {
+  margin: 0;
+  padding: 0;
+  font: 15px 'Source Sans Pro', sans-serif;
+  line-height: 1.6em;
+  color: #222;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #007EE5;
+  text-decoration: none;
+}
+a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+header.main-header {
+  background: none repeat scroll 0% 0% #205F29;
+  margin-bottom: 0px;
+}
+header.main-header a {
+  color: #fff;
+}
+header.main-header .container {
+  max-width: 1000px;
+}
+header.main-header .container nav a:hover {
+  background-color: #5C881C;
+}
+article {
+  margin: 0;
+}
+article header.about {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+article header {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+article header h1 {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: #000;
+}
+article header time {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: right;
+}
+article header time.left {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: left;
+}
+article div.social-links ul {
+  padding: 0px;
+}
+article div.social-links li {
+  display: inline;
+  font-size: 20px;
+}
+article div.social-links li a {
+  color: #000;
+  padding: 10px;
+}
+article div.social-links li a:hover {
+  color: #666;
+  text-decoration: none;
+}
+article p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+article p.note {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 0.533em 0.733em;
+}
+article p.update {
+  background-color: #FEEFB3;
+  border: 1px solid #e6e68a;
+  padding: 0.533em 0.733em;
+}
+article p.alert {
+  background-color: #ffe2e2;
+  border: 1px solid #ffb2b2;
+  padding: 0.533em 0.733em;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article li {
+  font-size: 16px;
+  line-height: 1.6em;
+}
+article a:hover {
+  text-decoration: underline;
+}
+article blockquote {
+  border-left: 2px solid #c7c7cc;
+  color: #666;
+  margin: 30px 0;
+  padding: 0 0 0 25px;
+}
+article img {
+  max-width: 100%;
+}
+article code {
+  color: #333;
+  background-color: #EEE;
+  border-radius: 0;
+  font-size: 13px;
+}
+article .meta {
+  font-size: 11px;
+}
+article .meta a:hover {
+  text-decoration: none;
+}
+article .meta div {
+  margin-bottom: 20px;
+  display: block;
+}
+article .meta a.tag {
+  margin: 0 10px 10px 0;
+  padding: 1px 12px;
+  display: inline-block;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.05);
+}
+article .meta a.tag:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+article .meta a.read_more,
+article .meta a.comments_btn {
+  font-size: 14px;
+  font-weight: 800;
+  padding: 10px 20px;
+  color: #205F29;
+  background: #FFF;
+  border: 1px solid #205F29;
+}
+article .meta a.read_more:hover,
+article .meta a.comments_btn:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.index {
+  max-width: 700px;
+}
+.index article header h2 {
+  font-size: 36px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+.index article header h2 a {
+  color: #000;
+}
+.index article header h2 a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+.index .separator {
+  padding: 40px 0 0 0;
+  margin: 0 0 40px 0;
+  height: 10px;
+  border-bottom: solid 1px #CCC;
+}
+.index .pagination {
+  display: block;
+  margin-bottom: 100px;
+}
+.index .pagination .left {
+  text-align: right;
+}
+.index .pagination .right {
+  text-align: left;
+}
+.index .pagination a {
+  display: inline-block;
+  border: 2px solid #5C881C;
+  margin: 0 5px;
+  padding: 8px 20px;
+  font-weight: bold;
+  color: #5C881C;
+}
+.index .pagination a:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.post {
+  max-width: 800px;
+}
+.post h2:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h3:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h4:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post article .meta {
+  margin: 50px 0 100px;
+}
+.list {
+  max-width: 700px;
+}
+.list ul.double-list {
+  margin: 0 auto 60px;
+  padding: 0;
+  list-style-type: none;
+}
+.list ul.double-list li {
+  padding: 5px 0;
+}
+.list ul.double-list li h2 {
+  font-size: 1em;
+  display: inline;
+  font-weight: normal;
+}
+.list ul.double-list li span {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  float: right;
+  padding-top: 3px;
+  font-size: 12px;
+  color: #999;
+}
+.full-width-content {
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  padding-right: 0px;
+  padding-left: 0px;
+}</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    </head>
+
+    <body>
+        <header class="navbar navbar-inverse bs-docs-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#theNavbar">
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		  </button>
+                  <a class="navbar-brand" href="/" title="Home" class="title">Movies, Metrics, Musings</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation" id="theNavbar">
+		    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/pages/about.html" title="About">About</a></li>
+                            <li><a href="/archives.html" title="Archive">Archive</a></li>
+                            <li><a href="/pages/resources.html" title="Resources">Resources</a></li>
+                            <li><a href="/notes" title="Notes">My Notes</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="wrap">
+<div class="container post">
+    <article>
+        <header>
+            <h1>To Iowa</h1>
+            <time datetime="article.date.isoformat()" pubdate>Sun 29 March 2020</time>
+        </header>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Table of Contents</div>
+            <div class="panel-body">
+            <div id="toc"><ul><li><a class="toc-href" href="#headfirst" title="Headfirst ">Headfirst </a><ul><li><a class="toc-href" href="#a-slow-start" title="A Slow Start ">A Slow Start </a></li><li><a class="toc-href" href="#the-real-thing" title="The Real Thing ">The Real Thing </a></li></ul></li><li><a class="toc-href" href="#once-more-with-feeling_1" title="Once More, with Feeling ">Once More, with Feeling </a><ul><li><a class="toc-href" href="#do-you-watch-veep" title="Do You Watch Veep? ">Do You Watch Veep? </a></li><li><a class="toc-href" href="#q4" title="Q4 ">Q4 </a></li><li><a class="toc-href" href="#getting-my-pants-on-straight" title="Getting My Pants on Straight ">Getting My Pants on Straight </a></li></ul></li></ul></div>
+            </div>
+        </div>
+
+        <div class="article_content">
+            
+<p>I think anyone who's worked with me in the past would vouch that I'm-- perhaps, to a fault-- fixated on building things to last. This time last year, all I was doing was refactoring production code and writing wikis on the Data Science Workflow. What a dilemma, then, to dive headlong into something that would last 12 months, tops. </p>
+<p>Late October had felt like a far cry from where I started my career. The business-facing analyst role was an excellent foot in the door, but I quickly found that I was happiest when I'd traded in Excel chops for solid Python fundamentals. After a couple years I was a bona fide Data Scientist. No asterisk, but my Imposter Syndrome (still very much alive and well, mind you) certainly had other opinions on that matter. After a few months of fun-employment spent rooting around in keras and learning how to read whitepapers, I was certain that my next nine to five would be an avenue to keep working <em>just outside</em> of my technical comfort zone.</p>
+<p>But when I was asked if I'd rather be a Data Scientist at the New York headquarters or a Data Director on the ground with our Iowa operation, I didn't even flinch. Two weeks before that call, I didn't see myself ever taking another job where studying and self-improvement weren't inherently baked in. But when it feels like you're literally saving the world, you lean into your strengths and do all that you can. I was a very good analyst.</p>
+<p>However, anyone who works in data will tell you that solid technical chops are no substitute for area knowledge. And damn do I wish I knew then what I know now.</p>
+
+<h2 id="headfirst">Headfirst<a class="headerlink" href="#headfirst" title="Permanent link"> </a></h2>
+<h3 id="a-slow-start">A Slow Start<a class="headerlink" href="#a-slow-start" title="Permanent link"> </a></h3>
+<p>Until I knew what anything meant, my biggest value-add was rote report automation. Field, like the banking and operations teams I'd supported in lives past, had production metrics that needed tracking. And so the first three weeks I worked, alone, in what was basically a storage closet that was sooned christened "The Data Cave." I'd pop out every now and again to ask if the numbers I was getting were in the right ballpark and was met with appreciable shrugs from a rotating cast of people who were happy enough to "just trust the data guy."</p>
+<p>Frankly, I showed up to Iowa at a really weird time. I started on November 11th and by the end of the month, we'd cycled through a good amount of the staff I'd met on my first day. The guy that would go on run the Field Operation started the day after I did. The state director, a week or so after that. I don't mean to engender any ill-will in sharing, merely paint the picture of how disorienting it all was. I quickly learned that <em>I</em> was the person I should be directing all of my data questions to. Go figure.</p>
+<p>I don't know if "fake it until you make it" was the correct over-used platitude here. Nor was "fail fast"-- understanding politics I'd never followed, in a state I'd never been, via tools I'd never used was a slow descent into madness.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/1_to_iowa/pooh.png"/></center>
+<center>How do we have three successful calls to someone without a phone number? Why is Des Moines not in Des Moines County? How do you spell Pete's last name?</center>
+<br/></p>
+<p>It became very obvious, very quickly, that my understanding of the data needed to become less-academic.</p>
+<h3 id="the-real-thing">The Real Thing<a class="headerlink" href="#the-real-thing" title="Permanent link"> </a></h3>
+<p>On a Saturday in late November, I packed the State Engagement Organizer, Tyler, and a Regional Organizer, Alex, into my car to shoot over to the west side of the state to attend a rally and a couple office openings. They gave me a really great conceptual understanding of Field work. They politely listened to my podcasts. We had a hell of a time discovering that our musical venn-diagram met at 2008 Taking Back Sunday (Tyler taught me to say that MakeDamnSure "bopped"). Alex fell asleep in the back seat and awoke with a sudden start, revealing her Texan roots: "I need a bathroom and some tacos." We were making great time and figured out how to make it happen at like 8:30 in rural Iowa.</p>
+<p>The office opening was unlike anything I'd experienced before. Iowa HQ was in a non-descript office park in West Des Moines, just down the street from <em>The Thai Place</em> and little else. Here, there were hoardes of people of all shapes and sizes, bundled in Yang merch, anxiously practicing scripts they'd soon use to go door knocking. There was a whole section of wall with maps where people had signed their names when they came back, beaming: "<em>I</em> walked this route today!"</p>
+<p>I walked around, asking questions, learning first-hand how they collected and entered data, snapping errant pictures</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/1_to_iowa/campaign_office.JPG"/></center>
+<center>Genuinely don't remember if I sent an "I'm doing it, Mom!" text or not</center>
+<br/></p>
+<p>Twenty minutes to the official office opening, we gather around what might have literaly been a soap box and hear a few powerful, if succinct, speeches from folks in the area. In between, strangers mill about sharing what brought them here today, interspersed with the occasional cheer from someone I'd come to see at every subsequent event ("When I say <em>Andrew</em>, you say <em>Yang</em>!"). I find a place to stand so my giant noggin doesn't block any of the cameras set up in the tiny space.</p>
+<p>And then a cheer. Someone queues up Return of the Mack. It's that guy I've spent all those hours on YouTube watching.</p>
+<p>The place is so packed that my first time seeing Andrew speak is from around the corner and via someone recording the whole affair</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/1_to_iowa/first_time.JPG"/></center>
+<br/></p>
+<p>Office: opened. I'd half-expected everyone to storm out of the doors like I'd done so many times before exiting the tunnel the Big House, but with fewer funny hats. Instead, there was a selfie line and the dispersal was... slower.</p>
+<p>By like a lot</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/1_to_iowa/selfie_front.JPG"/></center>
+<br/></p>
+<p>A few hours later there was a rally in a pub a block or so away. We hit capacity 30 minutes before Andrew even came on and people stood outside overflowing doorways just to hear him speak. Someone trusted me to do press credentialing, for some reason. I didn't have a list or anything-- so I gave a lanyard to anyone I could Google, lol</p>
+<p>Another drive north, another rally. After it all cleared out I got to meet Andrew. At the time, I didn't even consider that it'd be my only opportunity and to my everlasting regret, I didn't break the ice with my favorite dumb joke. We talked data, we talked Detroit, about why I made it out to Iowa. He shook my hand half a dozen times, told me I was a good man. I hope I never forget it.</p>
+<h2 id="once-more-with-feeling_1">Once More, with Feeling<a class="headerlink" href="#once-more-with-feeling" title="Permanent link"> </a></h2>
+<p>We packed up and drove home after a grueling 16 hour day, but I'd finally felt like I was <em>in it</em>. I walked away feeling so damn purposed. More importantly, though, I made my first of many friends in Iowa. I had been in the Central time zone for two weeks and some change, but that Saturday is where everything began for me.</p>
+<p>To any Campbell fans out there, this is where I rounded into <a href="https://napsterinblue.github.io/blog/2017/05/18/story-circles-and-survival-horror/#story-circles">step 4 of the Hero's Journey</a>. The next few weeks happened in a blur.</p>
+<h3 id="do-you-watch-veep">Do You Watch Veep?<a class="headerlink" href="#do-you-watch-veep" title="Permanent link"> </a></h3>
+<p>Not long after the rally, our state director all but kicked in the door to the Data Cave. "Kamala's suspending within the hour. Call everyone you know."</p>
+<p>Okay, done, lol</p>
+<p>I thought he was joking when my interviewer asked if I'd seen much of the hilarious shitshow that is HBO's Veep. I've heard it described as "accurate in the same way Scrubs is the closest show to working in an actual hospital."</p>
+<p>In truth, I'd completely forgotten about that question, but in the clamor of Sentator Harris' suspension, it was all I could think about. There was an electricity in the air. Quizzically, there was also an earnest, solumn respect for what we were all witnessing. I still don't have a read on whether the montage of that afternoon is tracked to "There Goes My Hero" or "Another One Bites the Dust."</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/1_to_iowa/kamala.jpg"/></center>
+<center>Let's split the difference and say "Wonderwall."</center>
+<br/></p>
+<p>Fortunately, I can say with confidence that we didn't exist in the same perpetual state of moral gray-- the Dan Egan types were few and far between. Had a host of Mikes, Amys, and Sues, though. I ran data, but am still unsure if I was closer to Kent or Gary. I don't think that's the call I get to make, nor a strawpoll I'd care to see. </p>
+<p>I've only seen the show through about Season 4 and am told that one of the later seasons follow Selena and company through a presidential primary. Don't think I'm quite ready for that one, haha.</p>
+<h3 id="q4">Q4<a class="headerlink" href="#q4" title="Permanent link"> </a></h3>
+<p>I lost sleep than I care to admit watching the fundraising goal trackers as we closed out the year. Despite scant media attention and speaking time at debates, public opinion for our guy looked better and better by the day. We raised serious cash and all of a sudden, things started changing in a hurry.</p>
+<p>We opened up a bunch of offices and the Field friends I'd made de-centralized from Des Moines. And before the place could start feeling ghost town-y we had a huge influx of National staff and new hires to Iowa HQ.</p>
+<p>Soon, we were out of space and began breakthing through literal and metaphorical walls as our team hit its stride.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/1_to_iowa/break_down_walls.jpg"/></center>
+<center>I'm... skeptical that we got our security deposit back.</center>
+<br/></p>
+<h3 id="getting-my-pants-on-straight">Getting My Pants on Straight<a class="headerlink" href="#getting-my-pants-on-straight" title="Permanent link"> </a></h3>
+<p>By the time I'd hit my "month on the campaign" mark, I was really starting to grow into myself.</p>
+<p>I sincerely think that's in no small part to all of the brilliant, helpful friends I'd made on the Field team. They were putting in serious hours to make this movement happen, nevertheless I can't recall a time I had to wait long if I ever asked for help. Which I was always happy to reciprocate-- a bartering system that was like 50% data pulls, 50% mildly-amusing Internet garbage.</p>
+<p>I spent enough time shoulder-to-shoulder with Tyler that we'd become insufferable to be around, I'm sure. Of course that was bound to happen with anyone else who loved Detroiters as much as I had, let alone seen it at all.</p>
+<p>We drank a wholly-regrettable amount of Red Bull. When we spoke to one another, it was largely in sentence fragments, sprinkled with profanity. We were always completely in sync, nevertheless. We did our best brainstorming laying on the hard, seldom-vacuumed floor, shouting hypotheticals across the room. When he called me a couple weeks after the campaign, it was as much to see how I was holding it up as for me to reminding him the name of "that Glam Rock Band with the bops?" (It was <a href="https://www.youtube.com/watch?v=Om_VWBua0_M">Foxy Shazam</a>.)</p>
+<p>Then one day-- I don't remember when-- it all started to click. We all got pretty good at freehanding Iowa.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/1_to_iowa/drawn_iowa.jpg"/></center>
+<center>I know this better than the state I grew up in, for sure.</center>
+<br/></p>
+<p>And of course, I was figuring out the data. More on this next time.</p>
+<p>Cheers,</p>
+<p>-Nick</p>
+        </div>
+
+        <div class="meta">
+            <div>
+                    <a href="http://napsterinblue.github.io/tag/musing.html" class="tag">musing</a>
+                    <a href="http://napsterinblue.github.io/tag/politics.html" class="tag">politics</a>
+            </div>
+        </div>
+    </article>
+
+
+</div>
+
+<style type="text/css">
+{
+    max-width: 700px;
+}
+
+.text_cell .prompt {
+    display: none;
+}
+
+div.cell {
+    padding: 0;
+}
+
+div.text_cell_render {
+    padding: 0;
+}
+
+div.prompt {
+    padding: -2px;
+    font-size: 13px;
+    min-width: 9ex;
+}
+
+div.input_prompt {
+    padding: .4em 0.2em;
+}
+
+div.output_prompt {
+    padding: .1em .2em;
+}
+
+div.output_area{
+    padding-bottom: 10px;
+}
+
+div.output_subarea {
+    max-width: calc(100% - 10ex);
+}
+
+div.input_area {
+    margin: .2em 0.4em;
+    max-width: 650px;
+}
+
+table.dataframe {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+table.dataframe th, td {
+    padding: 4px;
+    text-align: left;
+}
+
+pre code {
+    background-color: inherit;
+}
+
+.highlight {
+    padding-left: 4ex;
+    background: #fff;
+}
+
+code, kbd, pre, samp {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.dataframe thead tr:only-child th {
+    text-align: left;
+    background-color: #dae7f3;
+}</style>
+
+        </div>
+<!--
+    <footer>
+      <p>
+        © 2012-2017 Nick, license <a href=""> </a>
+        unless otherwise noted.
+        Generated by <a href= "http://docs.getpelican.com/">Pelican</a>.
+      </p>
+    </footer>
+-->
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-117840969-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-117840969-1');
+    ga('send', 'pageview');
+</script>
+    </body>
+</html>
