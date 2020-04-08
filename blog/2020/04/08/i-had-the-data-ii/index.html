@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Nick">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>I Had the Data -- Pt II | Movies, Metrics, Musings</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" title="Movies, Metrics, Musings blog atom feed" href="/feeds/all.atom.xml" />
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/theme/css/icons.css"/>
+        <style>.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+        <style>body {
+  margin: 0;
+  padding: 0;
+  font: 15px 'Source Sans Pro', sans-serif;
+  line-height: 1.6em;
+  color: #222;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #007EE5;
+  text-decoration: none;
+}
+a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+header.main-header {
+  background: none repeat scroll 0% 0% #205F29;
+  margin-bottom: 0px;
+}
+header.main-header a {
+  color: #fff;
+}
+header.main-header .container {
+  max-width: 1000px;
+}
+header.main-header .container nav a:hover {
+  background-color: #5C881C;
+}
+article {
+  margin: 0;
+}
+article header.about {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+article header {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+article header h1 {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: #000;
+}
+article header time {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: right;
+}
+article header time.left {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: left;
+}
+article div.social-links ul {
+  padding: 0px;
+}
+article div.social-links li {
+  display: inline;
+  font-size: 20px;
+}
+article div.social-links li a {
+  color: #000;
+  padding: 10px;
+}
+article div.social-links li a:hover {
+  color: #666;
+  text-decoration: none;
+}
+article p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+article p.note {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 0.533em 0.733em;
+}
+article p.update {
+  background-color: #FEEFB3;
+  border: 1px solid #e6e68a;
+  padding: 0.533em 0.733em;
+}
+article p.alert {
+  background-color: #ffe2e2;
+  border: 1px solid #ffb2b2;
+  padding: 0.533em 0.733em;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article li {
+  font-size: 16px;
+  line-height: 1.6em;
+}
+article a:hover {
+  text-decoration: underline;
+}
+article blockquote {
+  border-left: 2px solid #c7c7cc;
+  color: #666;
+  margin: 30px 0;
+  padding: 0 0 0 25px;
+}
+article img {
+  max-width: 100%;
+}
+article code {
+  color: #333;
+  background-color: #EEE;
+  border-radius: 0;
+  font-size: 13px;
+}
+article .meta {
+  font-size: 11px;
+}
+article .meta a:hover {
+  text-decoration: none;
+}
+article .meta div {
+  margin-bottom: 20px;
+  display: block;
+}
+article .meta a.tag {
+  margin: 0 10px 10px 0;
+  padding: 1px 12px;
+  display: inline-block;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.05);
+}
+article .meta a.tag:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+article .meta a.read_more,
+article .meta a.comments_btn {
+  font-size: 14px;
+  font-weight: 800;
+  padding: 10px 20px;
+  color: #205F29;
+  background: #FFF;
+  border: 1px solid #205F29;
+}
+article .meta a.read_more:hover,
+article .meta a.comments_btn:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.index {
+  max-width: 700px;
+}
+.index article header h2 {
+  font-size: 36px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+.index article header h2 a {
+  color: #000;
+}
+.index article header h2 a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+.index .separator {
+  padding: 40px 0 0 0;
+  margin: 0 0 40px 0;
+  height: 10px;
+  border-bottom: solid 1px #CCC;
+}
+.index .pagination {
+  display: block;
+  margin-bottom: 100px;
+}
+.index .pagination .left {
+  text-align: right;
+}
+.index .pagination .right {
+  text-align: left;
+}
+.index .pagination a {
+  display: inline-block;
+  border: 2px solid #5C881C;
+  margin: 0 5px;
+  padding: 8px 20px;
+  font-weight: bold;
+  color: #5C881C;
+}
+.index .pagination a:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.post {
+  max-width: 800px;
+}
+.post h2:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h3:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h4:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post article .meta {
+  margin: 50px 0 100px;
+}
+.list {
+  max-width: 700px;
+}
+.list ul.double-list {
+  margin: 0 auto 60px;
+  padding: 0;
+  list-style-type: none;
+}
+.list ul.double-list li {
+  padding: 5px 0;
+}
+.list ul.double-list li h2 {
+  font-size: 1em;
+  display: inline;
+  font-weight: normal;
+}
+.list ul.double-list li span {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  float: right;
+  padding-top: 3px;
+  font-size: 12px;
+  color: #999;
+}
+.full-width-content {
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  padding-right: 0px;
+  padding-left: 0px;
+}</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    </head>
+
+    <body>
+        <header class="navbar navbar-inverse bs-docs-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#theNavbar">
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		  </button>
+                  <a class="navbar-brand" href="/" title="Home" class="title">Movies, Metrics, Musings</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation" id="theNavbar">
+		    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/pages/about.html" title="About">About</a></li>
+                            <li><a href="/archives.html" title="Archive">Archive</a></li>
+                            <li><a href="/pages/resources.html" title="Resources">Resources</a></li>
+                            <li><a href="/notes" title="Notes">My Notes</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="wrap">
+<div class="container post">
+    <article>
+        <header>
+            <h1>I Had the Data -- Pt II</h1>
+            <time datetime="article.date.isoformat()" pubdate>Wed 08 April 2020</time>
+        </header>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Table of Contents</div>
+            <div class="panel-body">
+            <div id="toc"><ul><li><a class="toc-href" href="#our-data-that-only-we-had" title="Our Data (That Only We Had) ">Our Data (That Only We Had) </a><ul><li><a class="toc-href" href="#entity-resolution" title="Entity Resolution ">Entity Resolution </a></li><li><a class="toc-href" href="#hi-tech" title="Hi Tech ">Hi Tech </a></li><li><a class="toc-href" href="#lo-tech" title="Lo Tech ">Lo Tech </a></li></ul></li><li><a class="toc-href" href="#data-director_1" title="Data Director ">Data Director </a><ul><li><a class="toc-href" href="#a-comparison" title="A Comparison ">A Comparison </a><ul><li><a class="toc-href" href="#amy-regional-data-manager" title="Amy - Regional Data Manager ">Amy - Regional Data Manager </a></li><li><a class="toc-href" href="#joe-state-deputy-data-director" title="Joe - State Deputy Data Director ">Joe - State Deputy Data Director </a></li><li><a class="toc-href" href="#warren-data-and-analytics-team" title="Warren - Data and Analytics Team ">Warren - Data and Analytics Team </a></li><li><a class="toc-href" href="#mike-state-data-director" title="Mike - State Data Director ">Mike - State Data Director </a></li></ul></li><li><a class="toc-href" href="#skills_1" title="Skills ">Skills </a></li><li><a class="toc-href" href="#community-2009-2015" title="Community (2009-2015, ???) ">Community (2009-2015, ???) </a></li></ul></li></ul></div>
+            </div>
+        </div>
+
+        <div class="article_content">
+            
+<p>My last post was essentially a thousand-foot view of our DNC tech and how it all fit together. But by the time I felt like I'd done a decent job giving the background, I realized that writing about <em>how we actually used it</em> would be at least another standalone post. And while we're on the subject, this is probably a good a place as any to actually explain the job I'd signed up to do.</p>
+<h2 id="our-data-that-only-we-had">Our Data (That Only We Had)<a class="headerlink" href="#our-data-that-only-we-had" title="Permanent link"> </a></h2>
+<h3 id="entity-resolution">Entity Resolution<a class="headerlink" href="#entity-resolution" title="Permanent link"> </a></h3>
+<p>I knew we had our work cut out for us by my second day on the job. I'd just gotten off a "here's some of the reporting basics" call with the New Hampshire Data Director, Andy, and was finally getting into the lunch I'd brought. Then my phone lights up and I've got a text from a friend from home.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/2_data/idr.png"/></center>
+<br/></p>
+<p>In case it's not obvious reading it, somewhere along the way <em>his</em> phone number was affixed to <em>his mother's</em> voter file record. In this particular instance, we must've done a search on the voter file to find people like his mother, who's ostensibly an active, voting Democrat. We constantly did this sort of list creation to coordinate with our hundreds of text banking volunteers. Essentially, we'd narrow down a population of interest from the voter file and our volunteers would collect basic survey responses, used to give us a rough understanding of where our supporters are. Text banking can be outrageously effective from a "campaign benefit per dollar spent" perspective, if you're chasing down the right leads. Unfortunately, like my friend points out, right leads is predicated on right data and... swing and a miss.</p>
+<p>At the time, I didn't know enough about our tech stack to troubleshoot how this might have happened. And over the coming months, I'd come to learn that the data we were working with was <em>particularly</em> messy.</p>
+
+<p>Consider a few mostly-realistic scenarios:</p>
+<ul>
+<li>
+<p>Tyler John Doe has gone by his middle name, John, for years. In fact, when he comes to our late-November rally he signs in as "John Doe" and gives us his phone number and email. Little do we know, John gets his middle name from his father, John Senior. Later, when we log his attendance to VAN, we look up and see that there's a John Doe that lives in Iowa. The volunteer entering data doesn't think twice that John Doe is 60 years old-- they're only going off a row in a sign-in sheet. John "Danger" Doe Sr now has a new phone number and a fancy new gmail affixed to his contact info.</p>
+</li>
+<li>
+<p>In 2018, Smitty Werbenjagermanjensen registered to vote in the midterm at 1234 Main St in Des Moines. This is the info on file as far as the Vote File is concerned. Two years later, a Smitty Werbenjagermanjensen visits yang2020.com, donates, and gives us his contact info, showing an address at #1 Example Rd. It's a particularly unique name, but when we migrate this information from our source system and into VAN, should we overwrite the address we have on file for this name or is it a new person entirely? Duplicate record, it is.</p>
+</li>
+<li>
+<p>Troy and Abed are roommates and great friends. Abed, far more politically active than Troy, finally drags him to an event. Abed signs in and passes the clipboard to his friend. "Eh, this is more of <em>your</em> thing" and he copies Abed's contact info. Now two different names have the same address, phone, and email (shoehorned_community_reference@gmail.com). Troy winds up having a great time and would volunteer again. A week later an organizer follows up, calling the number on file. "Hi, is this Abed?" "Nope, you've got Troy." "Oh! Sorry for the mix up. Have a good one." And marks Troy "wrong contact info," filtering him out of all future list pulls.</p>
+</li>
+</ul>
+<p>My friend's text called for us to do some "Entity Resolution," which is essentially the practice of programmatically resolving the kind of scenarios you just read. Someone who knows the best way to <em>accurately</em> marry together multiple, separate data points, using varying levels of information is worth their weight in gold. It's a skill I sorely wish I'd read up on in my previous roles. </p>
+<h3 id="hi-tech">Hi Tech<a class="headerlink" href="#hi-tech" title="Permanent link"> </a></h3>
+<p>Campaign data is rife with human error and it can get out of hand, fast, with each additional avenue of data collection.</p>
+<p>Think of all the ways you might use technology to run a campaign. There's direct voter contact-- via both phones and text, merch sales, donations, newsletters, Facebook, event registrations, email surveys... Each of these areas had at least one unique tool that we used to handle the data. Now consider further that every tool couldn't operate without being fed external data, while generating its own data in turn.</p>
+<p>The biggest favor we did ourselves was truing up all of the ways that our different source systems talked with one another. We drew diagrams like this a lot.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/2_data/cosmos.jpg"/></center>
+<br/></p>
+<p>But the Entity Resolution problem outlined above became exponentially-harder as we increased the number of source systems to match records against.</p>
+<hr/>
+<p>To a stakeholder, a question like "How do we email every supporter in Iowa to ask if they want to be a Precinct Captain?" <em>feels</em> pretty trivial. But sitting down to make it happen, hands-on-keyboard, it quickly became anything but.</p>
+<p>For starters, we collect and therefore house supporter emails in half a dozen different systems. Which means we have to comb through each of them to find all the records with Iowa addresses (and haven't opted out of emails). Then we stack each source's payload together and deduplicate as best we can. Ultimately, our stakeholder wants to send this particular email using ActionKit and of the, say, ten thousand emails in our stack, only seven thousand of them have a record in ActionKit. So we cook up a clever way to create new ActionKit records using data linked from the various other systems.</p>
+<p>Fast-forward few days. We sent the email but we're not seeing the increase in our Precinct Captain numbers we thought we would. "Let me show you in VAN... See? I go into MyCampaign and pull the 'Precinct Captain' survey responses. They're basically what they've been all week."</p>
+<p>...well, email respones go to ActionKit. Did we push the responses back to VAN? Nope. Okay, doing that now.</p>
+<p>Wait, shit. 2,800 of these ActionKit records don't exist in VAN.</p>
+<p>You get the idea.</p>
+<hr/>
+<p>And so, a word of caution to anyone intending to work on a campaign's data team: All of these tools come with varying degrees of "manual upload" interfaces. If the end-users have access to use them, they're going to use them until you automate it away. The impulse is a perfectly rational one-- "Let me export this list from VAN, upload it to into our DVC platform. Tomorrow, I'll export the results and upload them into VAN." And this will work without a hitch <em>at least as often</em> as it will fail silently. Then one day, they'll come to you asking why everything is broken. Simultaneously, you'll learn that this problem even exists.</p>
+<p>On this matter, my advice is to:</p>
+<ol>
+<li>Get a lay of the land. Even if you don't have a hand in the data flow, you should know <em>basically</em> how everything fits together.</li>
+<li>If you can't be a helper, don't be an obstacle. There's a real empowerment in being able to unstick yourself. Don't gatekeep someone's ability to do that.</li>
+<li>Pick your battles. You'll never have time to automate everything.</li>
+<li>Identify power-users and learn how they work and think. Should you find yourself ready to automate, you'll want to replicate your experts. And they'll be happy to help because you're about to save them time and ideally, you're not being a total knob about it.</li>
+</ol>
+<h3 id="lo-tech">Lo Tech<a class="headerlink" href="#lo-tech" title="Permanent link"> </a></h3>
+<p>Another word to the hypothetical data person reading: If you're like me, you'll spend most of your time living in a constant state of "but there's so much more to automate!" dread. But what if, occasionally, you didn't?</p>
+<p>This might read like a tangent after spending so much time sounding off on all of technical gotchas. And that's only because it is. Hear me out.</p>
+<p>Urgent or no, I'd always recommend that you manually build a report once or twice before trying to automating it. You miss out on a wealth of context and intuition-building, otherwise. In that same fashion, you should make time to root around in the data. You'll thank me later.</p>
+<p>Go into MyCampaign and literally watch the timeline of someone getting involved-- from attending their first event, to increasing frequency of volunteer shifts, to eventual Precinct Captain.</p>
+<p>Bad data is seldom useful, but it can often be entertaining. Look for the best fake names people have given us. And by extension, names that have gotten past an organizer entering in data. Shout out to whoever signed in with the <a href="https://www.youtube.com/watch?v=QuWGI1uQy3w">Colbert deepcut</a>, "Suq Madiq."</p>
+<p>Watch someone literally go from uninterested to Yang Gang over the course of a rally.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/2_data/event_data.PNG"/></center>
+<br/></p>
+<p>Better yet, hop onto YouTube, Zach and Matt have a stream of the event, I'm sure of it. Gather your own anecdotal data. Did he <em>always</em> get an applause break at this point in his stump speech? Or is this what it looks like when people start warming up to him?</p>
+<p>Volunteer to do manual data entry when the mailers come in. You'll remember it forever.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/2_data/issue_mailer.jpg"/></center>
+<br/></p>
+<p>It was a punishing job. It was a difficult job. It was a wonderful job.</p>
+<h2 id="data-director_1">Data Director<a class="headerlink" href="#data-director" title="Permanent link"> </a></h2>
+<p>But what <em>was</em> my job?</p>
+<p>My title was Iowa Data Director but I did everything under the sun in the three months I was on staff.</p>
+<p>In hindsight, I should have probably saved a copy of the job posting they sent me after I said I'd be open to something beyond Data Analyst/Scientist. I'm checking the campaign site now and for the life of me can't imagine why I'm not seeing it, lol</p>
+<h3 id="a-comparison">A Comparison<a class="headerlink" href="#a-comparison" title="Permanent link"> </a></h3>
+<p>I was curious to see how typical my experience was. Specifically, how it measured up against listings on other campaigns for similar positions. I grabbed some screenshots before the positions were filled or vacated so we can look at a few.</p>
+<p><strong>Strong caveat, though</strong>: I don't mean to confuse absence of positions to mean that they don't exist. Entirely possible my counterparts were hired long ago and they're backfilling other needs. I've done literally zero due dilligence watching these listings and how they've changed, if at all, over the last several months.</p>
+<p><strong>Even stronger caveat</strong>: I drafted this entire section a week before Super Tuesday and a lot has happened since.</p>
+<p><strong>Even stronger, yet:</strong> Three years have gone by in the three weeks since I wrote that last sentence, mid-March. Woof.</p>
+<h4 id="amy-regional-data-manager">Amy - Regional Data Manager<a class="headerlink" href="#amy-regional-data-manager" title="Permanent link"> </a></h4>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/2_data/amy.PNG"/></center>
+<br/></p>
+<ol>
+<li>On the whole, this looks to be a Adminstrator role, facilitating the use of tools, but not doing much with the data</li>
+<li>That, plus the "and/or" between Excel and SQL, which aren't even remotely similar, leads me to believe they're probably not a terribly technical campaign</li>
+<li>"Targeted universes" simply means saved searches in VAN to narrow down to specific populations for Voter Contact (e.g. Democrats who have voted, who fit <em>this</em> demo and live in <em>this</em> area). We did a ton of this</li>
+</ol>
+<p>As stated above, the fact that I'm not seeing much in the way of analysis or data warehousing leads me to belive that this is probably an overflow role, designed to free up time for the data team, by staying on top of the <em>crucial</em> training and standardization of tools.</p>
+<h4 id="joe-state-deputy-data-director">Joe - State Deputy Data Director<a class="headerlink" href="#joe-state-deputy-data-director" title="Permanent link"> </a></h4>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/2_data/joe.PNG"/></center>
+<br/></p>
+<ol>
+<li>The ticketing system suggests the role is also as a liason to a greater data team</li>
+<li>This listing also includes reporting responsibilities</li>
+<li>It also lists Tableau in the skillset, by name</li>
+</ol>
+<p>Very similar to Amy's listing, but with a wider breadth of responsibilities.</p>
+<h4 id="warren-data-and-analytics-team">Warren - Data and Analytics Team<a class="headerlink" href="#warren-data-and-analytics-team" title="Permanent link"> </a></h4>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/2_data/warren.PNG"/></center>
+<br/></p>
+<p>This listing basically coalesces all of the positions into one application. They namedrop scikit-learn which earns a point or two in my book. Moreover, "experience with website analytics platforms" tells me that they're doing <em>at least</em> some naive web-optimization on their site, which is where you'd hire a good swath of data people from industry.</p>
+<h4 id="mike-state-data-director">Mike - State Data Director<a class="headerlink" href="#mike-state-data-director" title="Permanent link"> </a></h4>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/2_data/mike.PNG"/></center>
+<br/></p>
+<p>Bloomberg's listing was about as broad as Warren's catch-all, but with a job title affixed to it. It was also much more sterile, lol</p>
+<p>Couldn't find similar listings on any of the other campaigns.</p>
+<h3 id="skills_1">Skills<a class="headerlink" href="#skills" title="Permanent link"> </a></h3>
+<p>Broadly-speaking, I'd say these are all in about the same ballpark of my experience.</p>
+<p>In rough order of utility, I'd say:</p>
+<ul>
+<li>SQL/VAN. From jump, my biggest job was learning the ins and outs of our VAN operation and translating it into the underlying SQL code in Civis. Then, quickly being the resident "how does this work in VAN?" guy for the data team.</li>
+<li>Soft-skills. The most important aspect of the job is to be shoulder-to-shoulder with the State leadership, translating their goals and needs into tools you can build to give them actionable insight.</li>
+<li>Tableau. I'd used it a good deal years ago, but it was my bread and butter on this job. Probably stood up ten or so dashboards that got daily use-- everything from "what is our volunteer retention looking like?" to "where are the other candidates playing?"</li>
+<li>Report generation. With the SQL logic worked out, I could automate the creation of dashboards and workbooks. I hadn't meaningfully used Excel in years and it came careening back into my life by way of Google Sheets. I spent at least a quarter of my time keeping up with all of the edits, permissions, unintentional breaks, permissions again, etc</li>
+<li>I certainly did my fair share of VAN administrivia. Cleaning/puging data, universe creation, training, answering a million Slack notifications re: "why is VAN the way that it is?"</li>
+<li>Pure Python. Being stuck on a one-off data problem and being able to hop in and keep the project moving with some timely regex saved me more times than I'd care to admit.</li>
+<li>I didn't do nearly as much Pandas as I thought I would. Probably only had cause to use it a few times a week. Mind you, SQL and well-made dashboards made for a pretty reasonable substitute.</li>
+<li>Shapefiles. They're perplexing until they're not. Even learned enough QGIS to make alterations as needed. Then you can drag and drop them into Tableau, and as long as you've got a <code>.csv</code> that bridges <code>precinct_id</code> to the individual shape IDs, you're golden.</li>
+</ul>
+<p>More important than any of that, though, is to find and foster your community.</p>
+<h3 id="community-2009-2015">Community (2009-2015, ???)<a class="headerlink" href="#community-2009-2015" title="Permanent link"> </a></h3>
+<p>This job was like being thrown in the deep end of the fire. I showed up competent as hell and confident in my skillset, but after a week or so feeling like I was spinning my wheels, that evaporated. I couldn't keep building the manual reports forever. At the same time, I didn't know the data, have the right context, nor did I <em>really</em> know what needed doing. Moreover, I was <em>certain</em> that I was the only person feeling this clueless.</p>
+<p>I'd gotten my hands on the DNC's VAN documentation but wasn't making much sense of it. My New Hampshire counterpart, Andy, had a few weeks of experience on me, and seemed to be humming along just fine. As did Kristen, <strong>someone whose title was literally Data Wizard</strong>. I got to the point where I knew I should ask for help, but didn't want to interrupt the two of them knocking stuff out to ask "hey, yeah, hi.... what is... <em>any</em> of this?" </p>
+<p>And it turns out Andy was doing the same for Kris and I, and she was as well. A real comedy of errors, yeah?</p>
+<p>We spent the next couple days poring over everything, swapping code snippets, and firing a million emails to <code>tech-community@dnc.org</code>. It was a Cambrian Explosion of getting our shit together and my self-confidence crept back in as quickly as it had left me. It was the first time I recall feeling good about the day I had and optimistic about the day I was going to have.</p>
+<p>They were my first friends on the campaign and two of the solidest people I'd meet those months. And that's not for lack of competition.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/2_data/a_and_k.png"/></center>
+<br/></p>
+<p>Looking back on Iowa through the lens of "skill development" has been an interesting exercise. I got really good at Tableau. My <code>keras</code> got rusty. I picked up a SQL trick here or there. I got a lot of campaign-tooling exposure I might never use again. I know how to handle weird shapefile peculiarities when things look like this</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/2_data/gerrymander.png"/></center>
+<br/></p>
+<p>More than any of that, though, I'm coming to appreciate just how much I've grown, working with people.</p>
+<p>But more on that next time.</p>
+<p>Cheers,</p>
+<p>-Nick</p>
+<hr/>
+<p><a href="https://napsterinblue.github.io/blog/2020/03/29/about-that-time/">Index Page</a></p>
+<p><a href="https://napsterinblue.github.io/blog/2020/04/03/i-had-the-data-i/">Previous Post</a></p>
+        </div>
+
+        <div class="meta">
+            <div>
+                    <a href="http://napsterinblue.github.io/tag/musing.html" class="tag">musing</a>
+                    <a href="http://napsterinblue.github.io/tag/politics.html" class="tag">politics</a>
+            </div>
+        </div>
+    </article>
+
+
+</div>
+
+<style type="text/css">
+{
+    max-width: 700px;
+}
+
+.text_cell .prompt {
+    display: none;
+}
+
+div.cell {
+    padding: 0;
+}
+
+div.text_cell_render {
+    padding: 0;
+}
+
+div.prompt {
+    padding: -2px;
+    font-size: 13px;
+    min-width: 9ex;
+}
+
+div.input_prompt {
+    padding: .4em 0.2em;
+}
+
+div.output_prompt {
+    padding: .1em .2em;
+}
+
+div.output_area{
+    padding-bottom: 10px;
+}
+
+div.output_subarea {
+    max-width: calc(100% - 10ex);
+}
+
+div.input_area {
+    margin: .2em 0.4em;
+    max-width: 650px;
+}
+
+table.dataframe {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+table.dataframe th, td {
+    padding: 4px;
+    text-align: left;
+}
+
+pre code {
+    background-color: inherit;
+}
+
+.highlight {
+    padding-left: 4ex;
+    background: #fff;
+}
+
+code, kbd, pre, samp {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.dataframe thead tr:only-child th {
+    text-align: left;
+    background-color: #dae7f3;
+}</style>
+
+        </div>
+<!--
+    <footer>
+      <p>
+        © 2012-2017 Nick, license <a href=""> </a>
+        unless otherwise noted.
+        Generated by <a href= "http://docs.getpelican.com/">Pelican</a>.
+      </p>
+    </footer>
+-->
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-117840969-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-117840969-1');
+    ga('send', 'pageview');
+</script>
+    </body>
+</html>
