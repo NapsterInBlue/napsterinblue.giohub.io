@@ -438,24 +438,23 @@ article .meta a.comments_btn:hover {
 <h3 id="a-different-breed-of-stakeholder">A Different Breed of Stakeholder<a class="headerlink" href="#a-different-breed-of-stakeholder" title="Permanent link"> </a></h3>
 <p>The biggest throughline I found in working with the Iowa staff was how incredibly resourceful everyone was. I think "scrappy" is a bit overused, but I'm struggling to come up with a better descriptor. By the time I'd showed up in early November, there were a myriad of Google Sheets stitched together by people, from all levels of the organization, who had access to pull their own data from VAN and had figured out how to build the reports they needed.</p>
 <p>To that end, I was thrilled to realize just how helpful I could be, greasing the wheels here and there with a bit of code. Something like a "How do I make a leaderboard of organizer recruitment rate with college students?" could have been a daily task, accomplished with a saved search in VAN, using their UI to do some data exports, then some pivot table magic&trade;. Or if they agree "email ending in <code>.edu</code>" was sufficiently "college" then it'd take me like 10 minutes to give them a Google sheet that would auto-refresh every day.</p>
-<p>``` sql
-select
+<pre><code>select
     organizer,
     sum(case when ch.contact_result = 'shift'
          then 1 else 0 end) as shifts,
     count(*) as attempts,
-    shifts / attempts as success_rate</p>
-<pre><code>from            supporters s
-    left join   contact_history ch 
-        on      ch.people_id = s.id
+    shifts / attempts as success_rate
 
-where           RIGHT(s.email, 3) = 'edu'
-    and         ch.contact_type = 'phone'
+    from            supporters s
+        left join   contact_history ch 
+            on      ch.people_id = s.id
 
-group by        ch.organizer
-order by        success_rate desc
+    where           RIGHT(s.email, 3) = 'edu'
+        and         ch.contact_type = 'phone'
+
+    group by        ch.organizer
+    order by        success_rate desc
 </code></pre>
-<p>```</p>
 <p>A mentor of mine, who I thought about often those days, had always encouraged me to help people achieve their highest and best use. I was thrilled to be able to save people from spreadsheet hell and get back to doing what I sincerely thought was the hard work. And they absolutely did. But to my sincere delight, <em>so many of them were interested in getting even better with data.</em> It was a group of hungry fishermen saying "teach me to fish" and I admired the hell out of that.</p>
 <p>It wasn't long before I was feeling less like the token "data guy" and could literally see the people around me leveling up. We'd developed a shared vocabulary of nuanced metric definitions that we were all paying attention to. I saw folks leverage source-of-truth datasets I'd developed to make their own goals dashboards. Early December, I made a Slack channel to centralize the torrent daily VAN questions I'd get (lovingly named <code>Rage Against the Machine</code>) and near the end I barely had to monitor it-- everyone was so on top of helping one another grow.</p>
 <p>Hell, people were even catching bugs that had passed silently in the production dashboards we were all looking at.</p>
