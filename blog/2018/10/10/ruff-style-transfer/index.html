@@ -425,10 +425,10 @@ article .meta a.comments_btn:hover {
 <p>The last couple months have been blog-dark as I worked through the <a href="https://www.deeplearning.ai/courses/">Deep Learning Specialization</a> on Coursera. After the first couple courses of fundamentals, we brought some practitioners on site at work to give us a two-day-long bootcamp on a whole range of topics. I've since worked my way through the next couple of courses regarding project structures and computer-vision applications; I also got my computer doing all of my model-training on my GPU (which equals <em>dramatically-faster</em> code!).</p>
 <p>Getting handy with Deep Learning techniques has been a goal of mine for some time now and so I'm excited to be able to start sharing some of the stuff I'm figuring out.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link"> </a></h2>
-<p><center><img src="{static}/images/deep_nets.png"/></center></p>
+<p><center><img src="http://napsterinblue.github.io/images/deep_nets.png"/></center></p>
 <p>This is an alarmingly-reductive representation of what's happening under the hood, but if you're not familiar with Neural Networks/Deep Learning, the idea is that you feed some data in on the left, it comes out on the right with some sort of prediction. Along the way, Data Science&trade; happens as a result of our model iteratively figuring out the equations to affix to the black lines and blue circles. Provided that we give the program enough data and let it run for a long time, it can "learn" some really complex behavior.</p>
 <p>An interesting application of these techniques is called <em>Neural Style Transfer</em> where basically, we crack open one of these structures, show it two pictures, and let it figure out how to splice the two of them together by borrowing the <strong>Content</strong> from one and <strong>Style</strong> from the other. Some of the more famous examples look like the following:</p>
-<p><center><img src="{static}/images/style_transfer.png"/></center>
+<p><center><img src="http://napsterinblue.github.io/images/style_transfer.png"/></center>
 <center>Screenshot taken from Course 4 Week 4 of the Specialization linked above</center></p>
 <p>But this isn't intended to be a tutorial post (that's been expertly done <a href="https://medium.com/artists-and-machine-intelligence/neural-artistic-style-transfer-a-comprehensive-look-f54d8649c199">here</a> and <a href="https://medium.com/tensorflow/neural-style-transfer-creating-art-with-deep-learning-using-tf-keras-and-eager-execution-7d541ac31398">here</a>). Instead let's look at some of the more ridiculous applications I've stumbled into!</p>
 
@@ -437,11 +437,11 @@ article .meta a.comments_btn:hover {
 <p>And hey, check it out, it works!</p>
 <p>I took a picture of the castle my best friend got married in and weighed that against <a href="https://www.reddit.com/r/ImaginaryLandscapes/comments/8rf9n2/eclipse/">a really cool painting I found on /r/imaginarylandscapes</a></p>
 <p><br/>
-<center><img src="{static}/images/style_transfer/combinations/castle_space.png"/></center></p>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/combinations/castle_space.png"/></center></p>
 <p><br/>
 And while the result didn't really mesh whatsoever...</p>
 <p><br/>
-<center><img src="{static}/images/style_transfer/output/castle/space_castle_at_iteration_45.png"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/castle/space_castle_at_iteration_45.png"/></center>
 <br/></p>
 <p>... it was obvious that it was figuring out some sort of way to combine the pink, streaky elements of the second picture, while still preserving the content of the first.</p>
 <p>So now that I was capable of using this technique, the question became</p>
@@ -462,38 +462,38 @@ This is Daisy. She's a goof.</p>
 <br/></p>
 <p>I initally set out to see if I could use Style Transfer to punch up a picture this old girl.</p>
 <p><br/>
-<center><img src="{static}/images/style_transfer/images/loaf_daisy.jpg"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/images/loaf_daisy.jpg"/></center>
 <br/></p>
 <p>I tried for bombastic.</p>
 <p><br/>
-<center><img src="{static}/images/style_transfer/combinations/bombastic.png"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/combinations/bombastic.png"/></center>
 <br/></p>
 <p>Then stately.
 <br/>
-<center><img src="{static}/images/style_transfer/combinations/stately.png"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/combinations/stately.png"/></center>
 <br/></p>
 <p>Finally, I let the algorithm get carried away Miazaki-fying her.</p>
 <p><br/>
-<center><img src="{static}/images/style_transfer/combinations/totoro.png"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/combinations/totoro.png"/></center>
 <br/>
 <br/></p>
 <h3 id="a-more-earnest-attempt">A More Earnest Attempt<a class="headerlink" href="#a-more-earnest-attempt" title="Permanent link"> </a></h3>
 <p>Perhaps it had less to do with style transfer, and more to do with starting with a flattering picture.</p>
 <p><br/>
-<center><img src="{static}/images/style_transfer/images/jedi_daisy.jpg"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/images/jedi_daisy.jpg"/></center>
 <center>Like this one.</center>
 <br/></p>
 <p>Then apply Style Transfer, we do.</p>
 <p><br/>
-<center><img src="{static}/images/style_transfer/combinations/yoda.png"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/combinations/yoda.png"/></center>
 <br/></p>
 <p>Or this one.</p>
 <p><br/>
-<center><img src="{static}/images/style_transfer/images/happy_daisy.jpg"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/images/happy_daisy.jpg"/></center>
 <br/></p>
 <p>What if we decide that she should look more like a snow leopard?</p>
 <p><br/>
-<center><img src="{static}/images/style_transfer/combinations/leopard.png"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/combinations/leopard.png"/></center>
 <br/></p>
 <p>And so this was certainly amusing for awhile.</p>
 <p>But what if it was weirder?</p>
@@ -502,44 +502,44 @@ This is Daisy. She's a goof.</p>
 <h3 id="rules-of-the-road">Rules of the Road<a class="headerlink" href="#rules-of-the-road" title="Permanent link"> </a></h3>
 <p><a href="https://www.reddit.com/r/THE_PACK/">/r/THE_PACK</a> (NSFW) is a funny corner of Reddit where nearly 100k subscribers are all rallied around the same, ironic in-joke.</p>
 <p>At its core, the entire sub is sarcastically derivative of the kind of machismo, curse-word laden, skeleton-bearing images like you might see on shirts like this</p>
-<p><center><img src="{static}/images/style_transfer/images/origin.png"/></center></p>
+<p><center><img src="http://napsterinblue.github.io/images/style_transfer/images/origin.png"/></center></p>
 <p>But often lousy with Early 2000s-era Microsoft Office WordArt...</p>
-<p><center><img src="{static}/images/style_transfer/images/cats_dogs.jpg"/></center></p>
+<p><center><img src="http://napsterinblue.github.io/images/style_transfer/images/cats_dogs.jpg"/></center></p>
 <p>...about hysterically-specific things...</p>
-<p><center><img src="{static}/images/style_transfer/images/almond_milk.png"/></center></p>
+<p><center><img src="http://napsterinblue.github.io/images/style_transfer/images/almond_milk.png"/></center></p>
 <p>...written from the persona of an edgy middle-schooler who's <em>just</em> getting the hang of computers and swear words...</p>
-<p><center><img src="{static}/images/style_transfer/images/ipad.png"/></center></p>
+<p><center><img src="http://napsterinblue.github.io/images/style_transfer/images/ipad.png"/></center></p>
 <p>...and living out power fantasies, sharing the thoughts that they can't in real life.</p>
-<p><center><img src="{static}/images/style_transfer/images/gordon.png"/></center></p>
+<p><center><img src="http://napsterinblue.github.io/images/style_transfer/images/gordon.png"/></center></p>
 <p>They're occasionally pretty wholesome...</p>
-<p><center><img src="{static}/images/style_transfer/images/step_son.png"/></center></p>
+<p><center><img src="http://napsterinblue.github.io/images/style_transfer/images/step_son.png"/></center></p>
 <p>...and almost always steeped in irony.</p>
-<p><center><img src="{static}/images/style_transfer/images/irony.png"/></center></p>
+<p><center><img src="http://napsterinblue.github.io/images/style_transfer/images/irony.png"/></center></p>
 <p><br/></p>
 <p>But that's the long-and-short of it. It's genuinely one of my favorite subreddits. If this isn't the funniest thing you've seen all day, I don't know what to tell you.</p>
-<p><center><img src="{static}/images/style_transfer/images/shoes.png"/></center>
+<p><center><img src="http://napsterinblue.github.io/images/style_transfer/images/shoes.png"/></center>
 <br/></p>
 <h3 id="an-unholy-marriage">An Unholy Marriage<a class="headerlink" href="#an-unholy-marriage" title="Permanent link"> </a></h3>
 <p>So naturally, I was going to Style Transfer THE_PACK. I took to <a href="https://www.reddit.com/r/aww">/r/aww</a> to find some prime, dog-shaped candidates.</p>
 <p>First off, I spied this good boy on a shopping trip and elected to pair him against a needlessly-anthropomorphic dragon with a dash of spelling error.</p>
 <p><br/>
-<center><img src="{static}/images/style_transfer/combinations/pack_1.png"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/combinations/pack_1.png"/></center>
 <br/></p>
 <p>I think my favorite thing about how this turned out is that the font on the cart handle adopted the gross, block lettering from its counterpart.</p>
 <p><br/>
-<center><img src="{static}/images/style_transfer/output/the_pack/pack2_booksmart_at_iteration_100.png"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/the_pack/pack2_booksmart_at_iteration_100.png"/></center>
 <br/></p>
 <p>I was much more excited to run this next one if for the diversity in color/letter style alone.</p>
 <p><br/>
-<center><img src="{static}/images/style_transfer/combinations/pack_2.png"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/combinations/pack_2.png"/></center>
 <br/></p>
 <p>And boy did it deliver, lol</p>
 <p><br/>
-<center><img src="{static}/images/style_transfer/output/the_pack/pack3_sunchips_at_iteration_100.png"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/the_pack/pack3_sunchips_at_iteration_100.png"/></center>
 <br/></p>
 <p>Finally, I paired this cute pup in surgery recovery with, perhaps, my favorite post on the whole subreddit.</p>
 <p><br/>
-<center><img src="{static}/images/style_transfer/combinations/pack_3.png"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/combinations/pack_3.png"/></center>
 <br/>
 <br/>
 I set it up to run 1000 iterations and then went to bed.
@@ -549,7 +549,7 @@ And woke up to a beautiful disaster.
 <br/>
 <br/>
 <br/>
-<center><img src="{static}/images/style_transfer/output/the_pack/pack1_trevor_at_iteration_500.png"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/the_pack/pack1_trevor_at_iteration_500.png"/></center>
 <center>True riders of THE_PACK will be as excited as I was to see "Rocco" turn into a ROOOO </center>
 <br/></p>
 <p>And that was the brunt of what I intended to share.</p>
@@ -564,71 +564,71 @@ And woke up to a beautiful disaster.
 <p><br/></p>
 <h3 id="doing-it">Doing It<a class="headerlink" href="#doing-it" title="Permanent link"> </a></h3>
 <p>So we start with a base image</p>
-<p><center><img src="{static}/images/style_transfer/images/simpsons.png"/></center></p>
+<p><center><img src="http://napsterinblue.github.io/images/style_transfer/images/simpsons.png"/></center></p>
 <p>And we spend our Work From Home Day doing actual work on the laptop, while periodically firing off</p>
 <p><code>python transfer.py images/simpsons.png images/some_garbage.png --iter=100</code></p>
 <p>and returning to results of... mixed quality.</p>
 <h3 id="the-good">The Good<a class="headerlink" href="#the-good" title="Permanent link"> </a></h3>
 <p>I started off with <a href="https://www.reddit.com/r/pics/comments/9lssan/banksys_girl_with_balloon_shreds_itself_after/?st=jn50kdei&amp;sh=9c88f906">that Banksy piece that's been in the news this week</a> and it turned out pretty great.</p>
 <p><br/>
-<center><img src="{static}/images/style_transfer/images/banksy.jpg"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/images/banksy.jpg"/></center>
 <br/>
-<center><img src="{static}/images/style_transfer/output/simpsons/banksy_at_iteration_50.png"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/simpsons/banksy_at_iteration_50.png"/></center>
 <br/></p>
 <p>I'd seen other projects have a lot of success transferring psychedelic-style art, so it came as little surprise when it worked well here.</p>
 <p><br/>
-<center><img src="{static}/images/style_transfer/images/psychadelic.jpg"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/images/psychadelic.jpg"/></center>
 <br/>
-<center><img src="{static}/images/style_transfer/output/simpsons/psychadelic_at_iteration_50.png"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/simpsons/psychadelic_at_iteration_50.png"/></center>
 <br/></p>
 <p>So did a still from the Take On Me music video.</p>
 <p><br/>
-<center><img src="{static}/images/style_transfer/images/takeonme.jpg"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/images/takeonme.jpg"/></center>
 <br/>
-<center><img src="{static}/images/style_transfer/output/simpsons/takeonme_at_iteration_50.png"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/simpsons/takeonme_at_iteration_50.png"/></center>
 <br/></p>
 <p>And the design document for my tattoo, courtesy of <a href="https://www.instagram.com/johnnyandres/">Johnny Andres</a></p>
 <p><br/>
-<center><img src="{static}/images/style_transfer/images/tattoo.jpg"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/images/tattoo.jpg"/></center>
 <br/>
-<center><img src="{static}/images/style_transfer/output/simpsons/tattoo_at_iteration_50.png"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/simpsons/tattoo_at_iteration_50.png"/></center>
 <br/></p>
 <p>But I think the house from <em>Up</em> wound up being my favorite result.</p>
 <p><br/>
-<center><img src="{static}/images/style_transfer/images/up.jpg"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/images/up.jpg"/></center>
 <br/>
-<center><img src="{static}/images/style_transfer/output/simpsons/up_at_iteration_50.png"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/simpsons/up_at_iteration_50.png"/></center>
 <br/></p>
 <h3 id="the-bad">The Bad<a class="headerlink" href="#the-bad" title="Permanent link"> </a></h3>
 <p>I think the <strong>DEEAAAAAAAD</strong> looked similar-enough to Marge's necklace next to the top of Lisa and Maggies' hair that it caused their faces to bleed together.</p>
 <p><br/>
-<center><img src="{static}/images/style_transfer/images/batman.jpg"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/images/batman.jpg"/></center>
 <br/>
-<center><img src="{static}/images/style_transfer/output/simpsons/batman_at_iteration_50.png"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/simpsons/batman_at_iteration_50.png"/></center>
 <br/></p>
 <p>Dali blurred everything. Go figure.</p>
 <p><br/>
-<center><img src="{static}/images/style_transfer/images/dali.jpg"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/images/dali.jpg"/></center>
 <br/>
-<center><img src="{static}/images/style_transfer/output/simpsons/dali_at_iteration_50.png"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/simpsons/dali_at_iteration_50.png"/></center>
 <br/></p>
 <p>Apparently South Park is a show about everything melting.</p>
 <p><br/>
-<center><img src="{static}/images/style_transfer/images/south_park.jpg"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/images/south_park.jpg"/></center>
 <br/>
-<center><img src="{static}/images/style_transfer/output/simpsons/south_park_at_iteration_50.png"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/simpsons/south_park_at_iteration_50.png"/></center>
 <br/></p>
 <p>And the essence of Spongebob Squarepants is a downright-Lovecraftian number of eyeballs.</p>
 <p><br/>
-<center><img src="{static}/images/style_transfer/images/spongebob.jpg"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/images/spongebob.jpg"/></center>
 <br/>
-<center><img src="{static}/images/style_transfer/output/simpsons/spongebob_at_iteration_50.png"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/simpsons/spongebob_at_iteration_50.png"/></center>
 <br/></p>
 <h3 id="the-hell-is-that">...the Hell is That??<a class="headerlink" href="#the-hell-is-that" title="Permanent link"> </a></h3>
 <p>Finally, I fed it this picture of Steve Buscemi for about an hour, because why not?</p>
-<p><center><img src="{static}/images/style_transfer/images/buscemi.jpg"/></center>
+<p><center><img src="http://napsterinblue.github.io/images/style_transfer/images/buscemi.jpg"/></center>
 <br/>
-<center><img src="{static}/images/style_transfer/output/simpsons/buscemi_at_iteration_300.png"/></center>
+<center><img src="http://napsterinblue.github.io/images/style_transfer/output/simpsons/buscemi_at_iteration_300.png"/></center>
 <br/></p>
 <p>And if you stare at this like a <a href="http://www.magiceye.com/faq_example.htm">Magic Eye puzzle</a>, legend has it that he actually enters your soul.</p>
 <hr/>
