@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Nick">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>People Over Politicians | Movies, Metrics, Musings</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" title="Movies, Metrics, Musings blog atom feed" href="/feeds/all.atom.xml" />
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/theme/css/icons.css"/>
+        <style>.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+        <style>body {
+  margin: 0;
+  padding: 0;
+  font: 15px 'Source Sans Pro', sans-serif;
+  line-height: 1.6em;
+  color: #222;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #007EE5;
+  text-decoration: none;
+}
+a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+header.main-header {
+  background: none repeat scroll 0% 0% #205F29;
+  margin-bottom: 0px;
+}
+header.main-header a {
+  color: #fff;
+}
+header.main-header .container {
+  max-width: 1000px;
+}
+header.main-header .container nav a:hover {
+  background-color: #5C881C;
+}
+article {
+  margin: 0;
+}
+article header.about {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+article header {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+article header h1 {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: #000;
+}
+article header time {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: right;
+}
+article header time.left {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: left;
+}
+article div.social-links ul {
+  padding: 0px;
+}
+article div.social-links li {
+  display: inline;
+  font-size: 20px;
+}
+article div.social-links li a {
+  color: #000;
+  padding: 10px;
+}
+article div.social-links li a:hover {
+  color: #666;
+  text-decoration: none;
+}
+article p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+article p.note {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 0.533em 0.733em;
+}
+article p.update {
+  background-color: #FEEFB3;
+  border: 1px solid #e6e68a;
+  padding: 0.533em 0.733em;
+}
+article p.alert {
+  background-color: #ffe2e2;
+  border: 1px solid #ffb2b2;
+  padding: 0.533em 0.733em;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article li {
+  font-size: 16px;
+  line-height: 1.6em;
+}
+article a:hover {
+  text-decoration: underline;
+}
+article blockquote {
+  border-left: 2px solid #c7c7cc;
+  color: #666;
+  margin: 30px 0;
+  padding: 0 0 0 25px;
+}
+article img {
+  max-width: 100%;
+}
+article code {
+  color: #333;
+  background-color: #EEE;
+  border-radius: 0;
+  font-size: 13px;
+}
+article .meta {
+  font-size: 11px;
+}
+article .meta a:hover {
+  text-decoration: none;
+}
+article .meta div {
+  margin-bottom: 20px;
+  display: block;
+}
+article .meta a.tag {
+  margin: 0 10px 10px 0;
+  padding: 1px 12px;
+  display: inline-block;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.05);
+}
+article .meta a.tag:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+article .meta a.read_more,
+article .meta a.comments_btn {
+  font-size: 14px;
+  font-weight: 800;
+  padding: 10px 20px;
+  color: #205F29;
+  background: #FFF;
+  border: 1px solid #205F29;
+}
+article .meta a.read_more:hover,
+article .meta a.comments_btn:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.index {
+  max-width: 700px;
+}
+.index article header h2 {
+  font-size: 36px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+.index article header h2 a {
+  color: #000;
+}
+.index article header h2 a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+.index .separator {
+  padding: 40px 0 0 0;
+  margin: 0 0 40px 0;
+  height: 10px;
+  border-bottom: solid 1px #CCC;
+}
+.index .pagination {
+  display: block;
+  margin-bottom: 100px;
+}
+.index .pagination .left {
+  text-align: right;
+}
+.index .pagination .right {
+  text-align: left;
+}
+.index .pagination a {
+  display: inline-block;
+  border: 2px solid #5C881C;
+  margin: 0 5px;
+  padding: 8px 20px;
+  font-weight: bold;
+  color: #5C881C;
+}
+.index .pagination a:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.post {
+  max-width: 800px;
+}
+.post h2:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h3:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h4:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post article .meta {
+  margin: 50px 0 100px;
+}
+.list {
+  max-width: 700px;
+}
+.list ul.double-list {
+  margin: 0 auto 60px;
+  padding: 0;
+  list-style-type: none;
+}
+.list ul.double-list li {
+  padding: 5px 0;
+}
+.list ul.double-list li h2 {
+  font-size: 1em;
+  display: inline;
+  font-weight: normal;
+}
+.list ul.double-list li span {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  float: right;
+  padding-top: 3px;
+  font-size: 12px;
+  color: #999;
+}
+.full-width-content {
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  padding-right: 0px;
+  padding-left: 0px;
+}</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    </head>
+
+    <body>
+        <header class="navbar navbar-inverse bs-docs-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#theNavbar">
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		  </button>
+                  <a class="navbar-brand" href="/" title="Home" class="title">Movies, Metrics, Musings</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation" id="theNavbar">
+		    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/pages/about.html" title="About">About</a></li>
+                            <li><a href="/archives.html" title="Archive">Archive</a></li>
+                            <li><a href="/pages/resources.html" title="Resources">Resources</a></li>
+                            <li><a href="/notes" title="Notes">My Notes</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="wrap">
+<div class="container post">
+    <article>
+        <header>
+            <h1>People Over Politicians</h1>
+            <time datetime="article.date.isoformat()" pubdate>Thu 14 May 2020</time>
+        </header>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Table of Contents</div>
+            <div class="panel-body">
+            <div id="toc"><ul><li><a class="toc-href" href="#a-lifestyle" title="A Lifestyle ">A Lifestyle </a></li><li><a class="toc-href" href="#a-different-breed-of-stakeholder" title="A Different Breed of Stakeholder ">A Different Breed of Stakeholder </a></li><li><a class="toc-href" href="#downstream" title="Downstream ">Downstream </a></li><li><a class="toc-href" href="#the-yang-gang_1" title="The Yang Gang ">The Yang Gang </a><ul><li><a class="toc-href" href="#a-tension" title="A Tension ">A Tension </a></li><li><a class="toc-href" href="#a-real-miss" title="A Real Miss ">A Real Miss </a></li></ul></li><li><a class="toc-href" href="#delegate-the-verb-not-the-electorate-proxy_1" title="Delegate. The Verb, not the Electorate Proxy. ">Delegate. The Verb, not the Electorate Proxy. </a><ul><li><a class="toc-href" href="#communication-breakdown" title="Communication Breakdown ">Communication Breakdown </a></li><li><a class="toc-href" href="#righting-the-ship" title="Righting the Ship ">Righting the Ship </a></li></ul></li></ul></div>
+            </div>
+        </div>
+
+        <div class="article_content">
+            
+<p>As soon as a week after I'd started working on the campaign, I was already getting every manner of "so what's it like?" questions from friends I'd worked with at my industry job. Six months after I'd separated, I was so far removed from the work I'd done, yet so thoroughly tossed into the deep end of this new life, that comparing and contrasting was a wall of braindump text.</p>
+<p>Obviously the problem space was different. I've spent my last couple posts outlining the tech stack I was unfamiliar with and the learning curve therein. Geographically, Iowa was much flatter (and had markedly less traffic) than what I was used to in Michigan. The food was alright. I barely experienced the nightlife in Iowa. Financially... it's now obvious to me why there aren't more tech-to-politics transplants.</p>
+<p>Without a doubt though, I think the starkest change was in the people.</p>
+<h3 id="a-lifestyle">A Lifestyle<a class="headerlink" href="#a-lifestyle" title="Permanent link"> </a></h3>
+<p>I never quite adjusted to how much of a <em>lifestyle</em> this was for a good chunk of my friends on the campaign. Mind you, I was the odd-man out-- I can count the number of candidates I've voted for (much less have been employed by) on one hand, but the amount of people introduced to me as having "worked on <em>So and So</em>'s Senate race!" blurred together. The introduction was usually followed by a beat of silence as I combed my mental roladex, came up blank, and made some offhand quip about how I was class president once. Honestly, I was only half-certain that there weren't baseball cards of all these campaign teams in circulation.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/3_people/baseball.jpg"/></center>
+<center><a href="https://www.youtube.com/watch?v=LEiG7NzN6fM">"Eh, close enough"</a></center>
+<br/></p>
+
+<p>All told, I'm confident that there were alumni of at least a dozen other campaigns that would come swarming every time pizza would show up at the office. Thinking about it some more, I seem to recall a lot of folks from Bernie and Hillary's 2016 teams as well as a handful from Beto for Senate. I think Andrew said it best when he was panneling for the Nevada Caucus on CNN: "Politics is incestuous enough such that everyone on every team knows someone else on someone else's team." I heard this sort of thing often: "My roommate works for Amy." "I'm grabbing lunch with friends on Warren." "Mike Bloomberg stopped and frisked me."</p>
+<p>But all of this is only top of mind now that I'm so far removed. In those months, it got real familial real fast as we gained a shared understanding of the relationship between hours worked and laundry washed. Every new hire was warned, prophetically, that "everyone is going to be mad at everyone. All the time." Time dilation got weird, too-- someone would spend a couple days buttoning up personal matters it'd feel like you hadn't seen them in weeks. Damn if that level of shared toil didn't erode away all of the memories from "the before time."</p>
+<p>And it didn't occur to me then, that this was-- by definition-- the next thing everyone was doing. Regardless of how this all panned out, it will uniformly be something that we all <em>had done</em> when we meet new teams at new gigs. In the meantime, let's get this nerd elected, yeah?</p>
+<h3 id="a-different-breed-of-stakeholder">A Different Breed of Stakeholder<a class="headerlink" href="#a-different-breed-of-stakeholder" title="Permanent link"> </a></h3>
+<p>The biggest throughline I found in working with the Iowa staff was how incredibly resourceful everyone was. I think "scrappy" is a bit overused, but I'm struggling to come up with a better descriptor. By the time I'd showed up in early November, there were a myriad of Google Sheets stitched together by people, from all levels of the organization, who had access to pull their own data from VAN and had figured out how to build the reports they needed.</p>
+<p>To that end, I was thrilled to realize just how helpful I could be, greasing the wheels here and there with a bit of code. Something like a "How do I make a leaderboard of organizer recruitment rate with college students?" could have been a daily task, accomplished with a saved search in VAN, using their UI to do some data exports, then some pivot table magic&trade;. Or if they agree "email ending in <code>.edu</code>" was sufficiently "college" then it'd take me like 10 minutes to give them a Google sheet that would auto-refresh every day.</p>
+<pre><code>select
+    organizer,
+    sum(case when ch.contact_result = 'shift'
+         then 1 else 0 end) as shifts,
+    count(*) as attempts,
+    shifts / attempts as success_rate
+
+    from            supporters s
+        left join   contact_history ch 
+            on      ch.people_id = s.id
+
+    where           RIGHT(s.email, 3) = 'edu'
+        and         ch.contact_type = 'phone'
+
+    group by        ch.organizer
+    order by        success_rate desc
+</code></pre>
+<p>A mentor of mine, who I thought about often those days, had always encouraged me to help people achieve their highest and best use. I was thrilled to be able to save people from spreadsheet hell and get back to doing what I sincerely thought was the hard work. And they absolutely did. But to my sincere delight, <em>so many of them were interested in getting even better with data.</em> It was a group of hungry fishermen saying "teach me to fish" and I admired the hell out of that.</p>
+<p>It wasn't long before I was feeling less like the token "data guy" and could literally see the people around me leveling up. We'd developed a shared vocabulary of nuanced metric definitions that we were all paying attention to. I saw folks leverage source-of-truth datasets I'd developed to make their own goals dashboards. Early December, I made a Slack channel to centralize the torrent daily VAN questions I'd get (lovingly named <code>Rage Against the Machine</code>) and near the end I barely had to monitor it-- everyone was so on top of helping one another grow.</p>
+<p>Hell, people were even catching bugs that had passed silently in the production dashboards we were all looking at.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/3_people/keith.png"/></center>
+<br/></p>
+<p>Those months were marked with dizzying highs and gut-punching lows. When I'd write home I often joked that this was probably a bad job for someone "actively working on their workaholism." Give me the right data problem and I'll be thinking about it, whether I want to or not, until it's done. Layer in how important and time-sensitive the work is and yeah, go figure I'm running myself ragged trying to make it all come together. All personal drive notwithstanding, I wouldn't have been able to keep up with it were it not for the tenacious, brilliant friends I had around me.</p>
+<p>By now you might agree that I'm having real trouble being succinct in these posts. Nevertheless, I can't quite describe the feeling of camaraderie I felt after a long day of putting out fires, shutting the door and talking through how we'd get through the next one together. It was a partnership.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/3_people/sinatra.jpg"/></center>
+<center>Just whiteboarding, eating day-old pizza, listening to Sinatra, and taking creepshots of the guys.</center>
+<br/></p>
+<h3 id="downstream">Downstream<a class="headerlink" href="#downstream" title="Permanent link"> </a></h3>
+<p>And what can I even say about my friends in Field?</p>
+<p>For starters: Hardest-working group of people I've ever had the pleasure of knowing. Full stop. Now I'm hardly trying to discount the scores of fantastic people I've worked with and for over the years. It's just different. So many of these folks had, like me, picked up their lives to champion a once-in-a-generation candidate and that passion was obvious in everything they did.</p>
+<p>It was such a gift to see them doing their thing. Every Slack post sharing pictures of the small army of volunteers that had rolled into their office. Hearing the pride in their voices as they reported the day's numbers (when I'd eavesdrop on their nightly calls). Seeing the relationships and <em>community</em> they were fostering together... It's probably a criminal understatement to say that I miss the friends I worked with.</p>
+<p>It was egoless. Not "Look what I did" but "look what <em>we're doing</em>."</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/3_people/pride.JPG"/></center>
+<br/></p>
+<p>Regrettably, I didn't get to meet everyone that came to work in Iowa. We about doubled our Field team over the course of a month between December and January and by those pesky laws of time and space, we couldn't all be together all the time. But sincerely-- my best days on the campaign were days I could share good news. It's been the highest honor I've known, getting to call them friends and do all I could to set them up for success.</p>
+<h2 id="the-yang-gang_1">The Yang Gang<a class="headerlink" href="#the-yang-gang" title="Permanent link"> </a></h2>
+<p>Of course, I would be remiss if I didn't then talk about the sea of people who cared just as much, pro bono. I heard again and again "other campaigns would <em>kill</em> for this supporter base." And that was for absolute certain.</p>
+<p>The campaign's been suspended for awhile now, but my Twitter feed is still awash in Blue Hat emojis. It feels like #humanityfirst is being shepherded from slogan to movement. Heidi, Paget, Genie, Matt and Zach, TrapSmoove, Scott Santens, Sorority of Yang, and many, many others created an engaging, <em>welcoming</em> community. In truth, it was what initially drew me to Andrew and so by extension, why I ever took the leap of faith to pack up and head to Iowa. So if any of you are reading this, I want to say thank you.</p>
+<p>We worked hard. I probably checked the subreddit in excess of 20, 30 times a day and would <em>consistently</em> see people calling for folks to phone and text bank. The amount of live streams and Twitter clips of people making impromptu call centers out of their living rooms were a delight. I wish I could have shared then and I wish I still had the data to show now-- that shit <strong>mattered</strong>. Every day, I'd update a composite map of all voter contact. A dot for every call, every door knocked, every text, all color-coded by contact type. By the end of December, it looked like someone had spilled a bag of confetti over the state of Iowa. It got to the point where I had to timebox the data by day or plot each contact with 70% transparency to tease a more nuanced narrative than "we're doing <strong>so</strong> much with what we've got."</p>
+<p>Hard work aside, we had an incredibly <em>talented</em> group. I followed a dozen or so production-quality YouTube channels. We had onboarding sites and countless content creators making FAQ pages, with timestamped videos where people could see, precicely, where Andrew's been on the record about a particular issue. I kept the site where you could see the impact of $1,000/mo in your community bookmarked and shared it liberally. We had an <em>exceptional</em> community-organization tool in YangNearMe.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/3_people/yang_near_me.PNG"/></center>
+<br/></p>
+<p>And the creative content. It was weird, thoughtful, and hilarious. Most importantly though, it was fantastically-curated.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/3_people/yang_prints.PNG"/></center>
+<center>I mean look at the size of that scroll bar. And that tardigrade.</center>
+<br/></p>
+<p>And when people started flocking to Iowa, they'd marry this with an affinity for baking to make the best cookies I've ever had a guilty conscience eating.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/3_people/cookies.jpg"/></center>
+<br/></p>
+<p>But damn if I didn't stare at a blinking cursor for the better part of twenty minutes before continuing here. Because for as much good as there was, it was a lot to navigate.</p>
+<h3 id="a-tension">A Tension<a class="headerlink" href="#a-tension" title="Permanent link"> </a></h3>
+<p>In hindsight... duh, the anti-establishment candidate <em>would</em> have supporters without a lot of trust for the process.</p>
+<p>My phone was a graveyard of unopened texts from unknown numbers. Same goes for the email inbox I quickly learned to only check once or twice a day. All from resourceful, passionate, people urging me to "just give them the data," or to look over their strategy proposals-- the campaign existed in a perpetual state of "doing it all wrong."</p>
+<ul>
+<li>We should be in more areas, we're too saturated.</li>
+<li>We should consolidate, we won't be viable.</li>
+<li>We should tell people their goals need to be higher, they're slacking.</li>
+<li>We should dial down the goals across the board, they're overwhelmed.</li>
+<li>Bernie won here in 2016 so we should go here (?)</li>
+</ul>
+<p>But it wasn't all abject, opinionated chaos. Of course it wasn't. Now that I've got a lot more free time on my hands, I'm finally trolling through the sea of Google Docs I was CC'ed on and seeing what was essentially an organization of volunteer leaders parallel to the campaign.</p>
+<p>And they <em>really</em> felt like they should have access to the data.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/3_people/tension.PNG"/></center>
+<br/></p>
+<p>Just not enough to come be a part of the solution.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/3_people/tech_help.png"/></center>
+<br/></p>
+<p>And that sucks. Because all of my defensiveness aside, <em>I don't disagree</em> with much of the criticism leveled against the campaign. Moreover, I think the community brought <em>at least</em> as many good ideas to the table as bad ones. Ultimately though, we never had the staff or the infrastructure to sort out which from which, nor the capacity to take on more work than we were already doing. And so, the campaign stayed laser-focused, blinders on and executing where it had autonomy: the campaign.</p>
+<h3 id="a-real-miss">A Real Miss<a class="headerlink" href="#a-real-miss" title="Permanent link"> </a></h3>
+<p>I've spent the past weeks whipsawing between "I should have done this or that differently" and "I should have done more." And of all the "mores" I could have done more of, unambiguously, this could have been the "more-est." Fuck. <strong>We</strong> could have done more of. It's crazy how this still feels like it's my fault, weeks later.</p>
+<p>In any case, the next time we take a crack at this, this should be someone's full-time job. Specifically this person should:</p>
+<ol>
+<li>Chiefly, be someone who understands the limits of what we're <strong>legally</strong> allowed to have volunteers help with. Nobody was trying to wind up in court because we kicked a <code>.csv</code> to someone with more experience in Network Science than us.</li>
+<li>Have experience orchestrating technical projects in a context that looks similar to Open Source. We had a lot of talent reaching out, asking if they could hack on a quick-hit over the errant weekend-- I personally had a number of friends and former co-workers interested in pitching in. Hell, I was in the same boat before I took the plunge.</li>
+<li>Have experience creating <em>just enough</em> transparency to keep everyone happy. It was a chief area for improvement felt in Field and Yang Gang alike.</li>
+</ol>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/3_people/transparency.PNG"/></center>
+<br/></p>
+<p>On the other hand, nobody campaigns in a vacuum. Primaries are a messy affair where all of the campaigns are trying to elbow for rank over one another. For instance, the precincts that we won outright were a result of data'ing our way into where we thought the other candidates were playing and putting focus where there was virtually free real-estate. And so regardless of intent, that means that information shared is indeed, information shared.</p>
+<p>On the other, <em>other</em> hand, it was an objectively <em>good thing</em> to champion how low our average donation was. Or to publicly host progress bars to our fundraising goals (80% of my donations were between 11p and 12a on the last night of a goal push). And while it's clear they recognized this issue wasn't cut-and-dry</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/3_people/understanding.PNG"/></center>
+<br/></p>
+<p>I'm certain that there's more we could have done to keep fanning the enthusiasm.</p>
+<p>And by extension, farm out quality work. They'd done a great job documenting their various initiatives, complete with retros, KPIs, and a good deal of reverse-engineering our org chart so they knew who to try and reach out to about them.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/3_people/projects.PNG"/></center>
+<br/></p>
+<p>And once you get over the eeriness of how close their approximations are to reality, there were some bang-up proposals we would have been well-served to coordinate with.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/3_people/precinct_ex.PNG"/></center>
+<br/></p>
+<p>When we regroup in 2024, we <em>have</em> to do a better job of this.</p>
+<h2 id="delegate-the-verb-not-the-electorate-proxy_1">Delegate. The Verb, not the Electorate Proxy.<a class="headerlink" href="#delegate-the-verb-not-the-electorate-proxy" title="Permanent link"> </a></h2>
+<p>I think it took all of three days being back in Michigan for me to stubbornly break my laptop out and try and pick up where I'd left off in October, improving my Python chops. I was getting frustrated as hell, consulting docs and old notes on things I'd had down pat not six months prior. Self-improvement is the thing I like most about myself and I felt like I'd objectively regressed. Had a real "I went to Iowa and all I got was this lousy cynicism" attitude about it, I'll admit. </p>
+<p>But as I stuck with it, it started falling back under my fingers-- of course it did-- moreover, when I wasn't coding, I was writing and reflecting. After a couple of weeks of this, I've come to realize that I lived through one hell of a crash course in team-building. More accurately, <strong>recognizing how important it is to ask for help.</strong></p>
+<p>Personally-speaking, that's the big, neon, <code>LESSON LEARNED</code> sign I'd hang above this whole blog series. It's miserably ironic to me to have spent so much time thinking about organizational failures due to lack of process (<a href="https://napsterinblue.github.io/blog/2017/08/18/thoughts-about-tech-debt/">I'm sympathetic if coworkers prefer the term 'obsessed'</a>). Doubly ironic, that I was echoing our <em>macro</em> communication problem with the Yang Gang on the <em>micro</em> scale of the Data Team.</p>
+<h3 id="communication-breakdown">Communication Breakdown<a class="headerlink" href="#communication-breakdown" title="Permanent link"> </a></h3>
+<p>I was the only person working Data in Iowa for a long while.</p>
+<p>The rest of the team worked together in New York, save for Andy and Kristen in New Hampshire and Colorado, respectively. It took me a couple weeks to learn that nobody but Andy and I were daily VAN users-- most all of the work done at HQ was done leveraging datasets I'd never really touch (e.g. financial, marketing cohort-type stuff).</p>
+<p>For that first stretch, I considered myself solidly more an extension of Iowa Field than a member of that team. The Data Team had daily standups, booked for 30 minutes and seldom longer than 5-10. They were always talking in shorthand about projects I had no context on and likewise, my updates were always about some nuanced Iowa Field thing that nobody had context to weigh in on. Speaking two different languages, it seemed.</p>
+<p>As my nights got later and later, I stopped prioritizing making the 9 AM-- 8 AM my time-- call.</p>
+<p>I also didn't use the same Asana taskboard they did. The same "10 minute quick hits" I was so excited to be able to help my Field friends with, wound up being Death by A Thousand Cuts as I was catching maybe a dozen or so of them a day. I'm awful at telling people no and it didn't make much sense to spend half the time <em>task bookkeeping</em> that it would take me to just <em>do the task</em>. Moreover, I was hardly about to have my friends submit a ticket to the team in NY so they could then reach out to me for context I didn't have time to give, before they put it on the board and assigned me the ten minute fix anyways. So more accurately, I should say that I didn't use <em>any</em> Asana board.</p>
+<p>And I burnt out hard. The few times I <em>did</em> talk to the people in NY, there was always concern and a confusion about why I wasn't asking for help. And appropriately, it'd take me a good while to respond to these emails because I was in a constant state of "absolutely slammed." But thanks to a steady diet of Red Bull and exisential dread, I was more or less managing, so I didn't make a fuss.</p>
+<p>Then the other shoe fell. Sometime around the back half of December, I think, both the CTO and the Reporting Director who hired me had moved to totally different positions and we were even more short-handed.</p>
+<h3 id="righting-the-ship">Righting the Ship<a class="headerlink" href="#righting-the-ship" title="Permanent link"> </a></h3>
+<p>As we scattered for the holiday, everyone at varying states of working remote. Christmas and Christmas Eve were mandatory "have someone hide your computer" days. I slept so damn much that week-- the break was a well-needed reset button. I saw some friends and family, watched a couple seasons of Community, and slept some more. I was pretty thrilled when I started feeling like a person again. But what was more invigorating was learning that the cavalry was coming.</p>
+<p>Our Analytics Director, Robin, had stepped up to subsume the whole data team. And well-deserved, he's legitimately one of the brightest and hardest-working people I've had the pleasure hacking with. He and a couple others would be filtering into Iowa the first couple weeks of January. His deputy, Louisa, was going to hang back and start aligning HQ work to support the campaign's increasing focus in Iowa-- she'd later join us as well.</p>
+<p><br/>
+<center><img src="http://napsterinblue.github.io/images/yang_gang/3_people/fanfare.JPG"/></center>
+<center>He arrived with much fanfare.</center>
+<br/></p>
+<p>And man, it wasn't long at all before that drowning feeling began to subside. The two that came with Robin, Troy and Amelie, hit the ground running with a tenacity and ownership that exceeded every single hope and expectation I'd had. It was the first time in my career I'd ever surrendered a vague idea of "these projects I wish I had time to do" and had them materialize, better than I would have done, within days. I hope my subconscious cements the gratitude and relief that I felt delegating to such capable folks. It taught me so much.</p>
+<p>Within a week, we were banging out all kinds of data standardization and documentation, fixing a huge backlog of sticky notes I'd filed under "Gross VAN Stuff" and were now starting to generate insights and reports that Iowa didn't even know they wanted or needed. We ate a ludicrous amount of Thai food.</p>
+<p>It only got better as Robin and Louisa developed the effective "source the Iowa work to HQ" pipeline that I'd needed but neglected forging. Then Louisa and Kristen came to 950 Office Park in West Des Moines and we spent the next few weeks cooking with gas. If I were kinder to myself, I'd spend more time celebrating how much I achieved in those first couple months, doing my best. But looking back, all I can see is a supreme lesson in "you can't do everything by yourself."</p>
+<p>I'd never experienced that level of focus before. We woke up, knocked shit out all day, then went to bed. Rinse, repeat. All of us did-- across the hall, we'd have an All-Iowa standup every morning and evening. Robin and I would go and speak our piece, as did teams from political, web, advance, scheduling, field, operations, and a host of temporary teams spun up to deftly handle the various speedbumps that would bubble up (how do we house and get cars for several dozen staffers coming in two weeks? Katie Dolan is how.). Fast forward a day that would fly by, and by the time we'd regroup, damn-near everything was done. I said it often, and on deaf ears, that if they ever bore of campaigns, we had some world-class technical Project Managers in our midst.</p>
+<p>Even now, as the dust has settled on everything, I'll say with confidence that we'd built an incredibly sophisticated approach to the Iowa Caucus. My optimism was less and less reluctant by the day and I sincerely thought we were cruising for a top five, perhaps top four, finish. Of course, we all know how that panned out.</p>
+<p>But more on that next time.</p>
+<p>Cheers,</p>
+<p>-Nick</p>
+<hr/>
+<p><a href="https://napsterinblue.github.io/blog/2020/03/29/about-that-time/">Index Page</a></p>
+<p><a href="https://napsterinblue.github.io/blog/2020/04/08/i-had-the-data-ii/">Previous Post</a></p>
+<p><a href="https://napsterinblue.github.io/blog/2020/06/01/weak-as-far-as-weeks-go-i/">Next Post</a></p>
+        </div>
+
+        <div class="meta">
+            <div>
+                    <a href="http://napsterinblue.github.io/tag/musing.html" class="tag">musing</a>
+                    <a href="http://napsterinblue.github.io/tag/politics.html" class="tag">politics</a>
+            </div>
+        </div>
+    </article>
+
+
+</div>
+
+<style type="text/css">
+{
+    max-width: 700px;
+}
+
+.text_cell .prompt {
+    display: none;
+}
+
+div.cell {
+    padding: 0;
+}
+
+div.text_cell_render {
+    padding: 0;
+}
+
+div.prompt {
+    padding: -2px;
+    font-size: 13px;
+    min-width: 9ex;
+}
+
+div.input_prompt {
+    padding: .4em 0.2em;
+}
+
+div.output_prompt {
+    padding: .1em .2em;
+}
+
+div.output_area{
+    padding-bottom: 10px;
+}
+
+div.output_subarea {
+    max-width: calc(100% - 10ex);
+}
+
+div.input_area {
+    margin: .2em 0.4em;
+    max-width: 650px;
+}
+
+table.dataframe {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+table.dataframe th, td {
+    padding: 4px;
+    text-align: left;
+}
+
+pre code {
+    background-color: inherit;
+}
+
+.highlight {
+    padding-left: 4ex;
+    background: #fff;
+}
+
+code, kbd, pre, samp {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.dataframe thead tr:only-child th {
+    text-align: left;
+    background-color: #dae7f3;
+}</style>
+
+        </div>
+<!--
+    <footer>
+      <p>
+        © 2012-2017 Nick, license <a href=""> </a>
+        unless otherwise noted.
+        Generated by <a href= "http://docs.getpelican.com/">Pelican</a>.
+      </p>
+    </footer>
+-->
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-117840969-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-117840969-1');
+    ga('send', 'pageview');
+</script>
+    </body>
+</html>
