@@ -435,13 +435,13 @@ article .meta a.comments_btn:hover {
 <p>You go on and repeat this until you've sampled 100 people and come up with (364 / 365) ^ 100 = 76% chance there's not a single match. But this is far from the 50% likelihood I quoted in the first paragraph-- and with seemingly 4 times as many people. What gives?</p>
 <h2 id="how-many-comparisons-are-you-considering">How many comparisons are you considering?<a class="headerlink" href="#how-many-comparisons-are-you-considering" title="Permanent link"> </a></h2>
 <p>In our last example above, you were only considering 100 different pairs of people, and they were all you-centric. However, this fails to consider all of the checks that are happening in the room that don't involve you. Instead, we should think of the number of pairs in a room as the number of people times the number of potential partners, divided by two to correct for double-counting. This gives us:</p>
-<p><center><img src="{static}/images/birthday/pairs.PNG" width="400"/></center></p>
+<p><center><img src="http://napsterinblue.github.io/images/birthday/pairs.PNG" width="400"/></center></p>
 <p>In our example we reached out to 100 people, which means that there must've been 101 people in the room (100 plus you), giving us (101) * (100) / 2 = 5050 pairs. A few more comparisons than we were considering, yeah?</p>
 <h2 id="merging-the-two">Merging the Two<a class="headerlink" href="#merging-the-two" title="Permanent link"> </a></h2>
 <p>And so when you combine the probability of each check for different birthdays with the correct number of checks given a number of people in the room, you wind up with a neat equation for "Probability of No-Birthday-Matches" as follows:</p>
-<p><center><img src="{static}/images/birthday/birthdayEq.PNG" width="400"/></center></p>
+<p><center><img src="http://napsterinblue.github.io/images/birthday/birthdayEq.PNG" width="400"/></center></p>
 <p>Using this same equation, but tinkering with the number of people in the room (the exponent), we can see that the probability that there are no matches quickly goes to zero.</p>
-<p><center><img src="{static}/images/birthday/birthday.PNG" width="600"/></center></p>
+<p><center><img src="http://napsterinblue.github.io/images/birthday/birthday.PNG" width="600"/></center></p>
 <p>Indeed, we only need 23 people to be about 50% confident that there's no match. At 41 people, there's a 10% chance of that still being true, and at only 58, we're 99% confident that there's a birthday pair.</p>
 <h1 id="the-dmv_1">The DMV<a class="headerlink" href="#the-dmv" title="Permanent link"> </a></h1>
 <p>So I'm sitting at the DMV waiting to getting my license renewed. It's a Wednesday afternoon, their "Super Hours" day where you don't have to take off work to do paperwork that you're legally required to do. Naturally it's a circus of unhappy people milling about.</p>
@@ -459,16 +459,16 @@ ALL SERVICES</center></p>
 <h2 id="wait-what-are-the-odds">Wait, What are the Odds?<a class="headerlink" href="#wait-what-are-the-odds" title="Permanent link"> </a></h2>
 <p>And so we have a room full of people of variable length and a fixed number of possible values (phone numbers ending in 0000 to 9999 allows for 10,000 different values). This is basically the same problem as above, yeah?</p>
 <p>If we generalize the formula we used above a bit, we get</p>
-<p><center><img src="{static}/images/birthday/genEq.PNG" width="500"/></center></p>
+<p><center><img src="http://napsterinblue.github.io/images/birthday/genEq.PNG" width="500"/></center></p>
 <p>Where NumValues is the number of possible values that we could check for (365 calendar days in the Birthday Paradox) and PopSize is the number of people in the room.</p>
 <p>A bit of computer nonsense&trade; later, and we can repeat the same "hold the possible values constant and tinker with the number of people" as above. We see that it takes about 118 people to be as certain as not that we're going to see duplicate numbers.</p>
-<p><center><img src="{static}/images/birthday/dmv.PNG" width="600"/></center></p>
+<p><center><img src="http://napsterinblue.github.io/images/birthday/dmv.PNG" width="600"/></center></p>
 <p>118 people. Considering that the board showed less than half of that a time, I think my error (in a hypothetical situation where I wasn't just reading wrong) seems to be a rare one, albeit not completely far-fetched.</p>
 <p>But did it stand out to you that if we stripped away the axes, these graphs looks pretty similar? Let's do some more digging.</p>
 <h1 id="generalizing-even-more_1">Generalizing Even More<a class="headerlink" href="#generalizing-even-more" title="Permanent link"> </a></h1>
 <p>The only difference between the first and the second example is what base we held constant. In the Birthday Paradox, it was (364 / 365) and at the DMV, it was (9999 / 10000). From there, we arbitrarily increased the number of people in the room until we hit the break-even points were were monitoring in the visuals.</p>
 <p>But what happens when we also arbitrarily increase the number of possible values at the same time?</p>
-<p><center><img src="{static}/images/birthday/generic.PNG" width="600"/></center></p>
+<p><center><img src="http://napsterinblue.github.io/images/birthday/generic.PNG" width="600"/></center></p>
 <p>There's a lot going on here, but one thing that I want to point out is that despite our "Number of potential values" axis being in the hundreds of thousands (bottom-right axis), our Population Size only needs to be in a few hundred to break that "more likely than not" barrier.</p>
 <p>In fact, holding those target values (50%, 90%, 99%) equal, and playing with the different values in "People in the room" and "Possible Values" some interesting behavior emerges in the relationship between how many possibilities there are, and <em>how few people you need to be more certain than not that there's a match somewhere.</em></p>
 <ul>
@@ -476,12 +476,12 @@ ALL SERVICES</center></p>
 <li>In the DMV example, 118 covered 10,000. 118 / 10,000 = 1.18%</li>
 <li>In the graphic above, 471 covered 160k. <em>0.294%</em></li>
 </ul>
-<p><center><img src="{static}/images/birthday/longterm.PNG" width="600"/></center></p>
+<p><center><img src="http://napsterinblue.github.io/images/birthday/longterm.PNG" width="600"/></center></p>
 <p>So where am I going with this?</p>
 <h1 id="hash-values">Hash Values<a class="headerlink" href="#hash-values" title="Permanent link"> </a></h1>
 <p>If you aren't in the good handful of people who've been on the receiving end of my ranting on this topic, the elevator pitch about hash values goes: "You put some data into a hash function and it jumbles it. Like a lot. Conveniently, it also gives you a consistent output every time you put in an identical input." I won't go much deeper than that, but Chapter 5 of <a href="https://www.amazon.com/Grokking-Algorithms-illustrated-programmers-curious/dp/1617292230">Grokking's Algorithms</a> (a must-read, IMO) does a much better job than I could going into some of the finer details.</p>
 <p>For instance, in Python, if you hash out the string values 'a' and 'b', they're represented as some crazy-long integers that are bafflingly different from one another, as a result of a multitude of differences in their bit representations (highlighted below).</p>
-<p><center><img src="{static}/images/birthday/hash.PNG" width="600"/></center></p>
+<p><center><img src="http://napsterinblue.github.io/images/birthday/hash.PNG" width="600"/></center></p>
 <p>SO...</p>
 <p>Any time that I start in on teaching someone about Git/GitHub, I first give a lightning-fast overview of hash values. I think that a fundamental understanding of what they are allows a real solid appreciation for their role in powering the entire backend of Git.</p>
 <p>If you want to know if two files are the same, don't go through and check every character, just compare their hash values. This extends to images. Unintelligible byte code. Whole projects. At the end of the day it's just 0s and 1s saved to disk and the hashing algorithm eats it up all the same. I leaned on the difference between 'a' and 'b' above, but the same would go for the difference in hash values between 'a' and 'A' or 'a' and 'a _'. Despite the inputs being very similar, the outputs are anything but. In order for this to work, though, you need to be certain that you're not accidentally going to wind up getting the same outputted hash values for different inputs; that hash values for the character 'a' vs all of the text in Crime and Punishment don't accidentally match.</p>
@@ -513,7 +513,7 @@ ALL SERVICES</center></p>
 </iframe>
 </span></center></p>
 <p>And so after a bit of l337 5p34k finagling, I drove off with</p>
-<p><center><img src="{static}/images/birthday/plate.jpg" width="600"/></center></p>
+<p><center><img src="http://napsterinblue.github.io/images/birthday/plate.jpg" width="600"/></center></p>
 <h1 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link"> </a></h1>
 <p>For the sake of demonstration, I simplified our model a bit with some rounder math and some relaxed assumptions.</p>
 <ul>
