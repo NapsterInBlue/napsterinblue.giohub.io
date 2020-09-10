@@ -425,7 +425,7 @@ article .meta a.comments_btn:hover {
 <p>After I'd taken the job, I was getting messages left and right from friends, family, and former co-workers. A good deal of it to the tune of: "Wow. You work for the #MATH campaign. You guys must be doing some <em>crazy</em> data stuff!"</p>
 <p>And I guess that's technically accurate, insofar as we'd built derived metric on top of derived metric and near the end were looking at <em>very</em> nuanced KPIs to orchestrate Iowa. For instance, this distribution occurred naturally in two of the metrics we were looking at every day.</p>
 <p><br/>
-<center><img src="http://napsterinblue.github.io/images/yang_gang/2_data/weird_2_shapes.PNG"/></center>
+<center><img src="{static}/images/yang_gang/2_data/weird_2_shapes.PNG"/></center>
 <center>We kept joking that this, specifically, was <a href="https://www.youtube.com/watch?v=B42UDRbZzM0">the "wave we wanted to bring crashing on DC"</a></center>
 <br/></p>
 
@@ -451,7 +451,7 @@ article .meta a.comments_btn:hover {
 <li>Use a really neat interface to "cut turf," essentially sectioning off enough homes a person could reasonably visit within the span of a shift</li>
 </ol>
 <p><br/>
-<center><img src="http://napsterinblue.github.io/images/yang_gang/2_data/turf.png"/></center>
+<center><img src="{static}/images/yang_gang/2_data/turf.png"/></center>
 <center>Best picture I could find of this</center>
 <br/></p>
 <p>These turfs would have a corresponding code that mapped to the addresses they contained. This allowed a volunteer to download the miniVAN app, log in using the campaign credentials created by their organizer, punch in this code, and go.</p>
@@ -465,7 +465,7 @@ article .meta a.comments_btn:hover {
 </ul>
 <p>They were separated into two distinct tabs when you'd open up VAN.</p>
 <p><br/>
-<center><img src="http://napsterinblue.github.io/images/yang_gang/2_data/van.PNG"/></center>
+<center><img src="{static}/images/yang_gang/2_data/van.PNG"/></center>
 <center>And this is what they look like when you've been let go from the campaign, lol</center>
 <br/></p>
 <p>For the most part, we orchestrated Direct Voter Contact in the MyVoter half. This is where you spent most of your time if you were a volunteer, trying to find voters to migrate over to the MyC side. Organizers, on the other hand, would use MyCampaign to recruit volunteer shifts and coordinate event invitations to supporters. Of course, when we spent the last couple weeks in Iowa in "Get out the Vote/Caucus" mode, we were reaching back out to supporters on the MyCampaign side, to ensure that they intended to come out and caucus for us.</p>
@@ -478,7 +478,7 @@ article .meta a.comments_btn:hover {
 <p>Additionally, they had a good deal of documentation scattered across a shared Google Drive. But even this seemed geared to an audience already familiar with how everything operated. Moreover, you had to know where to look, if it existed at all.</p>
 <p>For instance, a human being in VAN can have a record in MyVoter with a unique ID. They can also have a record in MyCampaign with an ID, unique <em>per state</em>. They can <strong>also</strong> have a unique <code>person_id</code> that didn't directly correspond to either MyV or MyC. A person could have one of the three, two of the three, sometimes even three and it was never obvious why. We never found any documentation spelling out how these IDs came to be and would talk ourselves in circles trying to figure it out. This was an area in particular where questions to the support queue didn't bear a lot of fruit. Nor did looking for help elsewhere.</p>
 <p><br/>
-<center><img src="http://napsterinblue.github.io/images/yang_gang/2_data/van_id.PNG"/></center>
+<center><img src="{static}/images/yang_gang/2_data/van_id.PNG"/></center>
 <br/></p>
 <p>But perhaps I've spent the last handful of years spoiled by StackOverflow and the Python community....</p>
 <h3 id="civis">Civis<a class="headerlink" href="#civis" title="Permanent link"> </a></h3>
@@ -486,17 +486,17 @@ article .meta a.comments_btn:hover {
 <p>This afforded us a lot of things. Chiefly, it meant having a place to sink all of the other, non-VAN, non-DNC data that we were generating. It also gave us a platform to host Tableau dashboards on and-- in my estimation it's best feature-- the ability to create and orchestrate scheduled workflows. We used this to automate... lots of Google Sheets that would have otherwise been the morning chore of some organizer futzing with a VAN extract every day.</p>
 <p>Of course, using this feature to try and match the reports that VAN would generate was predictated on being able to reverse-engineer what VAN was doing. Almost always easier said than done. I was reminded of an XKCD comic every time I had to tell someone I couldn't help them out.</p>
 <p><br/>
-<center><img src="http://napsterinblue.github.io/images/yang_gang/2_data/tasks.png"/></center>
+<center><img src="{static}/images/yang_gang/2_data/tasks.png"/></center>
 <center>How many people volunteered this month? Give me five minutes. Which organizer has our best shift completion rate? Hold me...</center>
 <br/></p>
 <p>As far as criticisms of Civis go, the majority of my gripes were UX-based and not worth enumerating. On the other hand-- to the absolute shock of <strong>none</strong> of the Data team--  I'm happy to die on the "SQL interface" hill. Now, I've done 99% of the SQL in my career using SSMS-- a real feature-rich IDE supported by Microsoft-- so I'm certain my expectations are warped. But it drove me up a wall to spend the majority of my time typing in a terminal that took up less than half of my screen, maximized.</p>
 <p>This was fine if I was writing something less than 25 lines</p>
 <p><br/>
-<center><img src="http://napsterinblue.github.io/images/yang_gang/2_data/civis_1.PNG"/></center>
+<center><img src="{static}/images/yang_gang/2_data/civis_1.PNG"/></center>
 <br/></p>
 <p>But that was almost never the case.</p>
 <p><br/>
-<center><img src="http://napsterinblue.github.io/images/yang_gang/2_data/civis_2.PNG"/></center>
+<center><img src="{static}/images/yang_gang/2_data/civis_2.PNG"/></center>
 <br/></p>
 <p>Working out of a text editor meant foregoing Intellisense, so many of us just memorized the tables and fields we wanted to use then copy/pasted the code into Civis when we were done. But I digress.</p>
 <p>In terms of features, I'll level the same criticism of Civis as I have every other "One Stop Shop Data Science Platform" I've ever worked on: To operate with <a href="https://www.youtube.com/watch?v=_ZEWDGpM-vM">a good data science workflow</a> you need:</p>
